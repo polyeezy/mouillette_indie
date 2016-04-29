@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Fri Apr 29 17:20:56 2016 Loïc Weinhard
+## Last update Fri Apr 29 17:45:06 2016 Loïc Weinhard
 ##
 
 CC		=		g++
@@ -16,6 +16,7 @@ SRC		=		src/main.cpp				\
 				src/Manager/GraphicManager.cpp		\
 				src/General/Vec3.cpp			\
 				src/AEntities/AEntity.cpp		\
+				src/AEntities/EntityManager.cpp		\
 
 OBJ		=		$(SRC:.cpp=.o)
 

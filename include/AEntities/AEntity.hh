@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:08 2016 Loïc Weinhard
-// Last update Fri Apr 29 17:16:57 2016 Loïc Weinhard
+// Last update Fri Apr 29 17:45:43 2016 Loïc Weinhard
 //
 
 #ifndef AENTITY_HH_
@@ -16,6 +16,7 @@
 class	AEntity
 {
 
+public:
 enum Type
   {
     WALL, MENUITEM, CAR, FLOOR, POWERUP, UNDEFINED
