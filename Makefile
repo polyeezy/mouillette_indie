@@ -5,19 +5,22 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Mon Apr 25 11:03:42 2016 Valerian Polizzi
+## Last update Fri Apr 29 06:19:17 2016 Valérian Polizzi
 ##
 
-CC		=		clang++
+CC		=		g++
 
-NAME		=		tmp_name
+NAME		=		hyperSprint
 
 SRC		=		src/main.cpp				\
-
+				src/Manager/GraphicManager.cpp		\
 
 OBJ		=		$(SRC:.cpp=.o)
 
-CPPFLAGS	+=		-Wall -Wextra -Werror -I./include -std=c++11
+INCLUDES	=		-I./include -I./include/Manager
+
+CPPFLAGS	+=		-Wall -Wextra -Werror $(INCLUDES) -std=c++11
+
 
 MR_CLEAN        =               find ./ \( -name "*~" -o -name "\#*\#" \) -delete
 
@@ -35,4 +38,4 @@ fclean		:		clean
 
 re		:		clean all
 
-.PHONY		:		all clean fclean re
+.PHONY		:		all clean fclean re lib
