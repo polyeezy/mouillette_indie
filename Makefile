@@ -5,11 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-<<<<<<< HEAD
-## Last update Fri Apr 29 16:57:35 2016 Loïc Weinhard
-=======
-## Last update Fri Apr 29 06:33:41 2016 Valérian Polizzi
->>>>>>> 60eca00aa001064da429f65fd7303a7e01eb1006
+## Last update Fri Apr 29 17:20:56 2016 Loïc Weinhard
 ##
 
 CC		=		g++
@@ -18,16 +14,12 @@ NAME		=		hyperSprint
 
 SRC		=		src/main.cpp				\
 				src/Manager/GraphicManager.cpp		\
-				src/Vec3.cpp				\
+				src/General/Vec3.cpp			\
 				src/AEntities/AEntity.cpp		\
 
 OBJ		=		$(SRC:.cpp=.o)
 
-<<<<<<< HEAD
-INCLUDES	=		-I./include -I./include/Manager -I./include/AEntities/
-=======
-INCLUDES	=		-I./include -I./include/Manager -I./include/General
->>>>>>> 60eca00aa001064da429f65fd7303a7e01eb1006
+INCLUDES	=		-I./include -I./include/Manager -I./include/AEntities/ -I./include/General/
 
 CPPFLAGS	+=		-Wall -Wextra -Werror $(INCLUDES) -std=c++11
 
