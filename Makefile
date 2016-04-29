@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Fri Apr 29 06:19:17 2016 Valérian Polizzi
+## Last update Fri Apr 29 06:33:41 2016 Valérian Polizzi
 ##
 
 CC		=		g++
@@ -17,10 +17,9 @@ SRC		=		src/main.cpp				\
 
 OBJ		=		$(SRC:.cpp=.o)
 
-INCLUDES	=		-I./include -I./include/Manager
+INCLUDES	=		-I./include -I./include/Manager -I./include/General
 
 CPPFLAGS	+=		-Wall -Wextra -Werror $(INCLUDES) -std=c++11
-
 
 MR_CLEAN        =               find ./ \( -name "*~" -o -name "\#*\#" \) -delete
 
