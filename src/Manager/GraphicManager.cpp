@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Fri Apr 29 06:39:14 2016 Valérian Polizzi
+// Last update Tue May  3 11:42:00 2016 Valérian Polizzi
 //
 
 #include <GraphicManager.hh>
@@ -16,12 +16,43 @@ GraphicManager::GraphicManager()
 
 GraphicManager::~GraphicManager()
 {
+  _device->drop();
 }
 
-int	GraphicManager::createWindow(const std::string &name, const size_t &h, const size_t &w)
+int	GraphicManager::init(const size_t &w, const size_t &h)
 {
-  (void)name;
-  (void)h;
-  (void)w;
+  _device = irr::createDevice(irr::video::EDT_SOFTWARE, irr::core::dimension2d<irr::u32>(w, h), 16, false, false, false, 0);
+  _device->setWindowCaption(L"HyperSprint");
+  _driver = _device->getVideoDriver();
+  _smgr = _device->getSceneManager();
+  _guienv = _device->getGUIEnvironment();
+  return (0);
+}
+
+int	GraphicManager::render()
+{
+  _driver->beginScene(true, true, irr::video::SColor(255,100,101,140));
+  _smgr->drawAll();
+  _guienv->drawAll();
+  return (0);
+}
+
+bool	GraphicManager::isRunning() const
+{
+  return (_device->run());
+}
+
+int	GraphicManager::refresh()
+{
+  return (_driver->endScene());
+}
+
+int	GraphicManager::openWindow()
+{
+  while (this->isRunning())
+    {
+      this->render();
+      this->refresh();
+    }
   return (0);
 }

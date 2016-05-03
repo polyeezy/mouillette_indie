@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:15:10 2016 Valérian Polizzi
-// Last update Fri Apr 29 06:38:34 2016 Valérian Polizzi
+// Last update Tue May  3 11:37:00 2016 Valérian Polizzi
 //
 
 #ifndef _GRAPHICMANAGER_HH_
@@ -13,14 +13,24 @@
 
 # include <string>
 # include <iostream>
+# include <irrlicht.h>
 
 class GraphicManager
 {
+private:
+  irr::IrrlichtDevice *_device;
+  irr::video::IVideoDriver* _driver;
+  irr::scene::ISceneManager* _smgr;
+  irr::gui::IGUIEnvironment* _guienv;
 public:
   GraphicManager();
   ~GraphicManager();
 
-  int	createWindow(const std::string &, const size_t &, const size_t &);
+  bool	isRunning() const;
+  int	render();
+  int	init(const size_t &, const size_t &);
+  int	openWindow();
+  int	refresh();
 
 };
 
