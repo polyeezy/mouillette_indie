@@ -5,7 +5,7 @@
 // Login   <pagin_g@epitech.net>
 // 
 // Started on  Tue May  3 14:27:13 2016 Gonzague PAGIN
-// Last update Tue May  3 16:16:12 2016 Gonzague PAGIN
+// Last update Tue May  3 17:06:36 2016 Gonzague PAGIN
 //
 
 #ifndef SOUNDMANAGER_HH_
@@ -13,8 +13,8 @@
 
 #include <map>
 #include <string>
-#include <irrlicht.h>
-#include <irrKlan g.h>
+#include <irrKlang.h>
+
 
 class SoundManager
 {
