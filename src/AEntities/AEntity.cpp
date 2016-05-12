@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:46 2016 Loïc Weinhard
-// Last update Thu May 12 14:16:22 2016 Loïc Weinhard
+// Last update Thu May 12 14:45:37 2016 Loïc Weinhard
 //
 
 #include "AEntity.hh"
@@ -50,7 +50,7 @@ const std::string&	AEntity<T>::getModel()
 }
 
 template<typename T>
-void	AEntity<T>::setSize(const int width, const int height, const int depth)
+void	AEntity<T>::setSize(const T width, const T height, const T depth)
 {
   _size->setX(width);
   _size->setY(height);
@@ -66,7 +66,7 @@ void	AEntity<T>::setSize(const Vec3<T>* size)
 }
 
 template<typename T>
-void	AEntity<T>::setPos(const int x, const int y, const int z)
+void	AEntity<T>::setPos(const T x, const T y, const T z)
 {
   _pos->setX(x);
   _pos->setY(y);

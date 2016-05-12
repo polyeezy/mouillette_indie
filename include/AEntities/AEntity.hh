@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:08 2016 Loïc Weinhard
-// Last update Thu May 12 14:24:44 2016 Loïc Weinhard
+// Last update Thu May 12 14:45:26 2016 Loïc Weinhard
 //
 
 #ifndef AENTITY_HH_
@@ -37,9 +37,9 @@ public:
   AEntity::Type		getType() const;
   const std::string&	getModel();
 
-  void		setSize(const int width, const int height, const int depth);
+  void		setSize(const T width, const T height, const T depth);
   void		setSize(const Vec3<T>*);
-  void		setPos(const int x, const int y, const int z);
+  void		setPos(const T x, const T y, const T z);
   void		setPos(const Vec3<T>*);
   void		setType(const AEntity::Type);
   void		setModel(const std::string &);
