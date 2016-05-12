@@ -5,53 +5,62 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 16:00:29 2016 Loïc Weinhard
-// Last update Fri Apr 29 16:35:00 2016 Loïc Weinhard
+// Last update Thu May 12 13:56:42 2016 Loïc Weinhard
 //
 
 #include "Vec3.hh"
 
-Vec3::Vec3(const int x, const int y, const int z)
+template<typename T>
+Vec3<T>::Vec3(const T x, const T y, const T z)
 {
   _x = x;
   _y = y;
   _z = z;
 }
 
-Vec3::~Vec3()
+template<typename T>
+Vec3<T>::~Vec3()
 {
 }
 
-int	Vec3::getX() const
+template<typename T>
+T	Vec3<T>::getX() const
 {
   return _x;
 }
 
-int	Vec3::getY() const
+template<typename T>
+T	Vec3<T>::getY() const
 {
   return _y;
 }
 
-int	Vec3::getZ() const
+template<typename T>
+T	Vec3<T>::getZ() const
 {
   return _z;
 }
 
-void	Vec3::setX(const int &x)
+template<typename T>
+void	Vec3<T>::setX(const T &x)
 {
   _x = x;
 }
 
-void	Vec3::setY(const int &y)
+template<typename T>
+void	Vec3<T>::setY(const T &y)
 {
   _y = y;
 }
 
-void	Vec3::setZ(const int &z)
+template<typename T>
+void	Vec3<T>::setZ(const T &z)
 {
   _z = z;
 }
 
-Vec3&	Vec3::operator=(const Vec3 &vec)
+template<typename T>
+Vec3<T>&	Vec3<T>::operator=(const Vec3 &vec)
 {
   _x = vec.getX();
   _y = vec.getY();
@@ -59,7 +68,8 @@ Vec3&	Vec3::operator=(const Vec3 &vec)
   return (*this);
 }
 
-std::ostream&	Vec3::operator<<(std::ostream &os)
+template<typename T>
+std::ostream&	Vec3<T>::operator<<(std::ostream &os)
 {
   os << "x = " << _x << " | ";
   os << "y = " << _y << " | ";

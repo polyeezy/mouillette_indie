@@ -5,12 +5,13 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:46 2016 Loïc Weinhard
-// Last update Fri Apr 29 17:17:56 2016 Loïc Weinhard
+// Last update Thu May 12 14:16:22 2016 Loïc Weinhard
 //
 
 #include "AEntity.hh"
 
-AEntity::AEntity(Vec3* size, Vec3* pos, const AEntity::Type type, const std::string &model)
+template<typename T>
+AEntity<T>::AEntity(Vec3<T>* size, Vec3<T>* pos, const AEntity::Type type, const std::string &model)
 {
   _size = size;
   _pos = pos;
@@ -18,65 +19,76 @@ AEntity::AEntity(Vec3* size, Vec3* pos, const AEntity::Type type, const std::str
   _model = model;
 }
 
-AEntity::~AEntity()
+template<typename T>
+AEntity<T>::~AEntity()
 {
 
 }
 
-Vec3*	AEntity::getSize() const
+template<typename T>
+Vec3<T>*	AEntity<T>::getSize() const
 {
   return (_size);
 }
 
-Vec3*	AEntity::getPos() const
+template<typename T>
+Vec3<T>*	AEntity<T>::getPos() const
 {
   return (_pos);
 }
 
-AEntity::Type	AEntity::getType() const
+template<typename T>
+typename AEntity<T>::Type	AEntity<T>::getType() const
 {
   return (_type);
 }
 
-const std::string&	AEntity::getModel()
+template<typename T>
+const std::string&	AEntity<T>::getModel()
 {
   return (_model);
 }
 
-void	AEntity::setSize(const int width, const int height, const int depth)
+template<typename T>
+void	AEntity<T>::setSize(const int width, const int height, const int depth)
 {
   _size->setX(width);
   _size->setY(height);
   _size->setZ(depth);
 }
 
-void	AEntity::setSize(const Vec3* size)
+template<typename T>
+void	AEntity<T>::setSize(const Vec3<T>* size)
 {
   _size->setX(size->getX());
   _size->setY(size->getY());
   _size->setZ(size->getZ());
 }
 
-void	AEntity::setPos(const int x, const int y, const int z)
+template<typename T>
+void	AEntity<T>::setPos(const int x, const int y, const int z)
 {
   _pos->setX(x);
   _pos->setY(y);
   _pos->setZ(z);
 }
 
-void	AEntity::setPos(const Vec3* pos)
+template<typename T>
+void	AEntity<T>::setPos(const Vec3<T>* pos)
 {
   _pos->setX(pos->getX());
   _pos->setY(pos->getY());
   _pos->setZ(pos->getZ());
 }
 
-void	AEntity::setType(const AEntity::Type type)
+template<typename T>
+void	AEntity<T>::setType(const AEntity<T>::Type type)
 {
   _type = type;
 }
 
-void	AEntity::setModel(const std::string &model)
+template<typename T>
+void	AEntity<T>::setModel(const std::string &model)
 {
   _model = model;
 }

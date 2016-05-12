@@ -5,30 +5,35 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 17:33:48 2016 Loïc Weinhard
-// Last update Fri Apr 29 17:48:46 2016 Loïc Weinhard
+// Last update Thu May 12 14:23:25 2016 Loïc Weinhard
 //
 
 #include "EntityManager.hh"
 
-EntityManager::EntityManager()
+template<typename T>
+EntityManager<T>::EntityManager()
 {
 }
 
-EntityManager::~EntityManager()
+template<typename T>
+EntityManager<T>::~EntityManager()
 {
 }
 
-const std::vector<AEntity *>	EntityManager::getEntities()
+template<typename T>
+const std::vector<AEntity<T> *>	EntityManager<T>::getEntities()
 {
   return (_entities);
 }
 
-void	EntityManager::addEntity(AEntity *entity)
+template<typename T>
+void	EntityManager<T>::addEntity(AEntity<T> *entity)
 {
   _entities.push_back(entity);
 }
 
-void	EntityManager::deleteEntity(const AEntity *entity)
+template<typename T>
+void	EntityManager<T>::deleteEntity(const AEntity<T> *entity)
 {
   size_t	i;
 
@@ -44,7 +49,8 @@ void	EntityManager::deleteEntity(const AEntity *entity)
     }
 }
 
-void	EntityManager::deleteEntitiesFromType(const AEntity::Type type)
+template<typename T>
+void	EntityManager<T>::deleteEntitiesFromType(const typename AEntity<T>::Type type)
 {
   size_t	i;
 
@@ -57,12 +63,14 @@ void	EntityManager::deleteEntitiesFromType(const AEntity::Type type)
     }
 }
 
-void	EntityManager::clear()
+template<typename T>
+void	EntityManager<T>::clear()
 {
   _entities.clear();
 }
 
-AEntity*	EntityManager::operator[](const size_t i) const
+template<typename T>
+AEntity<T>*	EntityManager<T>::operator[](const size_t i) const
 {
   if (i >= _entities.size())
     return (NULL);
