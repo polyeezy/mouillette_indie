@@ -5,10 +5,10 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Wed May 11 14:55:24 2016 Loïc Weinhard
+## Last update Tue May 17 06:10:47 2016 Valérian Polizzi
 ##
 
-CC		=		g++
+CC		=		clang++
 
 IrrlichtHome 	:= 		./lib/IrrLicht
 
@@ -17,11 +17,12 @@ BinPath 	= 		.
 NAME		=		hyperSprint
 
 SRC		=		src/main.cpp				\
+				src/Manager/Core.cpp			\
 				src/Manager/GraphicManager.cpp		\
+				src/Manager/ControllerManager.cpp	\
 				src/General/Vec3.cpp			\
 				src/AEntities/AEntity.cpp		\
 				src/AEntities/EntityManager.cpp		\
-				src/Manager/ControllerManager.cpp	\
 
 OBJ		=		$(SRC:.cpp=.o)
 

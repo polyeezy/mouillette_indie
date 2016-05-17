@@ -5,33 +5,99 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:44:53 2016 Loïc Weinhard
-// Last update Wed May 11 14:55:37 2016 Loïc Weinhard
+// Last update Tue May 17 08:45:37 2016 Valérian Polizzi
 //
 
 #include "ControllerManager.hh"
-
+#include "GraphicManager.hh"
 
 void	ControllerManager::importConf()
 {
+  std::ifstream is(CM_CONF_PATH);
+  std::string   line;
+  int           key;
+  int           value;
 
+  std::cout << CM_CONF_PATH << std::endl;
+  while (std::getline(is, line))
+    {
+      std::stringstream ss(line);
+      ss >> key >> value;
+      std::cout << "Mapping " << key << " with " << value << std::endl;
+      this->mapKey(key, value);
+    }
 }
 
 void	ControllerManager::exportConf()
 {
+  std::ofstream file(_path.c_str());
+
+  for (std::map<int, int>::iterator it = _key_map.begin(); it != _key_map.end(); it++)
+    {
+      file << it->first << " " << it->second << '\n';
+    }
 
 }
 
 void	ControllerManager::setConfPath(const std::string &path)
 {
-
+  _path = path;
 }
 
 void	ControllerManager::setMapKey(const int key, const int value)
 {
-
+  _key_map[value] = key;
 }
 
 int	ControllerManager::getKey() const
 {
   return (0);
+}
+
+void            ControllerManager::mapKey(const int key, const int value)
+{
+  _key_map[value] = key;
+}
+
+bool ControllerManager::OnEvent(const irr::SEvent &event)
+{
+  if (event.EventType == irr::EET_KEY_INPUT_EVENT)
+    {
+      {
+	if (event.EventType == irr::EET_KEY_INPUT_EVENT && !event.KeyInput.PressedDown)
+	  {
+	    std::cout << "KEY PRESSED : " << event.KeyInput.Key;
+	    std::cout << "[" << _key_map[event.KeyInput.Key] << "]";
+	    switch (_key_map[event.KeyInput.Key])
+	      {
+	      case ControllerManager::Control::UP:
+		std::cout << "(UP)" << std::endl;
+		break;
+	      case ControllerManager::Control::DOWN:
+		std::cout << "(DOWN)" << std::endl;
+		break;
+	      case ControllerManager::Control::LEFT:
+		std::cout << "(LEFT)" << std::endl;
+		break;
+	      case ControllerManager::Control::RIGHT:
+		std::cout << "(RIGHT)" << std::endl;
+		break;
+	      case ControllerManager::Control::ESCAPE:
+		std::cout << "(ESCAPE)" << std::endl;
+		break;
+	      case ControllerManager::Control::PAUSE:
+		std::cout << "(PAUSE)" << std::endl;
+		break;
+	      case ControllerManager::Control::ACTION:
+		std::cout << "(ACTION)" << std::endl;
+		break;
+	      default:
+		std::cout << "(unkown)" << std::endl;
+		break;
+	      }
+	  }
+	return true;
+      }
+    }
+  return false;
 }
