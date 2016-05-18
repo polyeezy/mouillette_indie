@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Tue May 17 06:10:47 2016 Valérian Polizzi
+## Last update Wed May 18 13:34:03 2016 Loïc Weinhard
 ##
 
 CC		=		clang++
@@ -27,7 +27,7 @@ SRC		=		src/main.cpp				\
 OBJ		=		$(SRC:.cpp=.o)
 
 INCLUDES	=		-I./include -I./include/Manager -I./include/AEntities/ -I./include/General/
-INCLUDES	+=		-I./lib/IrrLicht/include/
+INCLUDES	+=		-I./lib/IrrLicht/include/ -I./include/Scenes/
 
 
 LDFLAGS		+=		-L$(IrrlichtHome)/lib/Linux -L/usr/X11R6/lib64 -L/usr/lib  -lIrrlicht -lpthread ##-lIrrKlang
