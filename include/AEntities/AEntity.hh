@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:08 2016 Loïc Weinhard
-// Last update Mon May 30 15:43:45 2016 Loïc Weinhard
+// Last update Mon May 30 16:11:20 2016 Loïc Weinhard
 //
 
 #ifndef AENTITY_HH_
@@ -15,7 +15,6 @@
 
 class	AEntity
 {
-
 public:
 enum Type
   {
