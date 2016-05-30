@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 17:28:07 2016 Loïc Weinhard
-// Last update Wed May 18 13:41:34 2016 Loïc Weinhard
+// Last update Mon May 30 02:27:46 2016 Valérian Polizzi
 //
 
 #ifndef ENTITYMANAGER_HH_
@@ -18,7 +18,6 @@ class	EntityManager
 {
 private:
   std::vector<AEntity*>	_entities;
-
 public:
   EntityManager();
   ~EntityManager();
@@ -28,7 +27,6 @@ public:
   void				deleteEntity(const AEntity *);
   void				deleteEntitiesFromType(const typename AEntity::Type);
   void				clear();
-
   AEntity*			operator[](const size_t) const;
 };
 
