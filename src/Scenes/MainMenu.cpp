@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 18 13:22:54 2016 Loïc Weinhard
-// Last update Mon May 30 11:54:27 2016 Loïc Weinhard
+// Last update Mon May 30 16:06:34 2016 Loïc Weinhard
 //
 
 #include "GraphicManager.hh"
@@ -13,7 +13,7 @@
 
 MainMenu::MainMenu()
 {
-  this->addEntity(new AEntity(new Vec3(500, 274, 0), new Vec3(X_CENTER(500), Y_CENTER(274), 0), AEntity::Type::MENUITEM, P2M + "chirouphare.png"));
+  this->addEntity(new Button(new Vec3(100, 100, 0), new Vec3(X_CENTER(100), Y_CENTER(100), 0), "JOUER"));
 }
 
 MainMenu::~MainMenu()

@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Mon May 30 03:09:33 2016 Valérian Polizzi
+## Last update Mon May 30 15:44:58 2016 Loïc Weinhard
 ##
 
 CC		=		clang++
@@ -24,6 +24,7 @@ SRC		=		src/main.cpp				\
 				src/General/Vec3.cpp			\
 				src/AEntities/AEntity.cpp		\
 				src/AEntities/EntityManager.cpp		\
+				src/AEntities/Button.cpp		\
 				src/Scenes/TestScene.cpp		\
 				src/Scenes/MainMenu.cpp			\
 
@@ -39,7 +40,7 @@ LDFLAGS		+=		-lGL -lXxf86vm -lXext -lX11 -lXcursor
 USERCXXFLAGS 	= 		-O3 -ffast-math
 CXXFLAGS 	= 		$(USERCXXFLAGS)
 
-CXXFLAGS	+=		-Wall -Wextra -Wno-unused-variable -Wno-unused-parameter $(INCLUDES) -std=c++11
+CXXFLAGS	+=		-Wall -Wextra -Werror -Wno-unused-variable -Wno-unused-parameter $(INCLUDES) -std=c++11
 
 MR_CLEAN        =               find ./ \( -name "*~" -o -name "\#*\#" \) -delete
 

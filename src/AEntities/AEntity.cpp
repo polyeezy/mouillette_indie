@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:46 2016 Loïc Weinhard
-// Last update Wed May 18 14:01:02 2016 Loïc Weinhard
+// Last update Mon May 30 15:43:53 2016 Loïc Weinhard
 //
 
 #include "AEntity.hh"
@@ -43,7 +43,7 @@ AEntity::Type	AEntity::getType() const
 }
 
 
-const std::string&	AEntity::getModel()
+std::string	AEntity::getModel() const
 {
   return (_model);
 }
@@ -90,4 +90,13 @@ void	AEntity::setType(const AEntity::Type type)
 void	AEntity::setModel(const std::string &model)
 {
   _model = model;
+}
+
+AEntity&	AEntity::operator=(const AEntity &entity)
+{
+  _size = entity.getSize();
+  _pos = entity.getPos();
+  _type = entity.getType();
+  this->setModel(entity.getModel());
+  return (*this);
 }
