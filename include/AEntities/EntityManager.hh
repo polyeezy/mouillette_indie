@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 17:28:07 2016 Loïc Weinhard
-// Last update Wed May 18 13:41:34 2016 Loïc Weinhard
+// Last update Mon May 30 11:55:08 2016 Loïc Weinhard
 //
 
 #ifndef ENTITYMANAGER_HH_
@@ -13,6 +13,8 @@
 
 # include <vector>
 # include "AEntity.hh"
+
+# define P2M	std::string("../../materials")
 
 class	EntityManager
 {
