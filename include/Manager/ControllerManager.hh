@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:38:00 2016 Loïc Weinhard
-// Last update Tue May 17 08:44:18 2016 Valérian Polizzi
+// Last update Mon May 30 14:03:27 2016 Marc MORANT
 //
 
 #ifndef CONTROLLERMANAGER_HH_
@@ -19,6 +19,7 @@
 # include <iostream>
 # include <sstream>
 # define CM_CONF_PATH   "conf/keys.conf"
+# define CM_CONTROL_COUNT	7
 
 class	ControllerManager : public irr::IEventReceiver
 {
@@ -31,18 +32,19 @@ public:
 private:
   std::map<int, int>	_key_map;
   std::string		_path;
+  bool			_keysDown[CM_CONTROL_COUNT];
 public:
-  ControllerManager(){};
+  ControllerManager();
   ~ControllerManager(){};
 
   void	importConf();
   void	exportConf();
   void	setConfPath(const std::string &);
   void	setMapKey(const int, const int);
-  int	getKey() const;
   void          mapKey(const int key, const int value);
 
   bool OnEvent(const irr::SEvent &event);
+  bool  isKeyDown(const e_control enumKey) const;
 };
 
 #endif

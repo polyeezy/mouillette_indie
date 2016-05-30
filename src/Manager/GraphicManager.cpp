@@ -5,7 +5,8 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Mon May 30 07:20:04 2016 Valérian Polizzi
+// Last update Mon May 30 07:21:59 2016 Valérian Polizzi
+// Last update Mon May 30 14:06:18 2016 Marc MORANT
 //
 
 #include <GraphicManager.hh>
