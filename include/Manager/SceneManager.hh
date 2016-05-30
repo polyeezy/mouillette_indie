@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 02:29:19 2016 Valérian Polizzi
-// Last update Mon May 30 02:44:11 2016 Valérian Polizzi
+// Last update Mon May 30 03:39:02 2016 Valérian Polizzi
 //
 
 #ifndef _SCENEMANAGER_HH_
@@ -14,6 +14,7 @@
 # include <EntityManager.hh>
 # include <map>
 # include <string>
+# include <Entities.hh>
 
 class SceneManager
 {
