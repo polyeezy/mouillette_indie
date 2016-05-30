@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Mon May 30 02:48:49 2016 Valérian Polizzi
+## Last update Mon May 30 03:09:33 2016 Valérian Polizzi
 ##
 
 CC		=		clang++
@@ -25,6 +25,7 @@ SRC		=		src/main.cpp				\
 				src/AEntities/AEntity.cpp		\
 				src/AEntities/EntityManager.cpp		\
 				src/Scenes/TestScene.cpp		\
+				src/Scenes/MainMenu.cpp			\
 
 OBJ		=		$(SRC:.cpp=.o)
 
