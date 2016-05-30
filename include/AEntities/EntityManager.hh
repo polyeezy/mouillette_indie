@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 17:28:07 2016 Loïc Weinhard
-// Last update Mon May 30 03:10:11 2016 Valérian Polizzi
+// Last update Mon May 30 03:40:31 2016 Valérian Polizzi
 //
 
 #ifndef ENTITYMANAGER_HH_
@@ -13,6 +13,7 @@
 
 # include <vector>
 # include "AEntity.hh"
+# include <Entities.hh>
 
 # define P2M	std::string("../../materials")
 

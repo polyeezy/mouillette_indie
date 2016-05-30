@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 17:33:48 2016 Loïc Weinhard
-// Last update Wed May 18 13:42:07 2016 Loïc Weinhard
+// Last update Mon May 30 03:50:15 2016 Valérian Polizzi
 //
 
 #include "EntityManager.hh"
