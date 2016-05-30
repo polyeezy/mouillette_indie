@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:08 2016 Loïc Weinhard
-// Last update Mon May 30 03:58:46 2016 Valérian Polizzi
+// Last update Mon May 30 05:19:39 2016 Valérian Polizzi
 //
 
 #ifndef AENTITY_HH_
@@ -19,8 +19,7 @@ public:
 enum Type
   {
     WALL, MENUITEM, CAR, FLOOR, POWERUP, UNDEFINED
-  };
-  
+  };  
 private:
   Vec3*		_size;
   Vec3*		_pos;

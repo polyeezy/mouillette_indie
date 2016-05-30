@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 02:33:27 2016 Valérian Polizzi
-// Last update Mon May 30 02:53:51 2016 Valérian Polizzi
+// Last update Mon May 30 07:05:31 2016 Valérian Polizzi
 //
 
 #include <SceneManager.hh>
@@ -21,6 +21,11 @@ SceneManager::~SceneManager()
 int		SceneManager::init()
 {
   return (0);
+}
+
+EntityManager	*SceneManager::getCurrentScene()
+{
+  return (_currentScene);
 }
 
 int		SceneManager::preloadScene(EntityManager *scene, const std::string &sceneName)

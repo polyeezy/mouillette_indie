@@ -5,14 +5,14 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 17:33:48 2016 Loïc Weinhard
-// Last update Mon May 30 03:50:15 2016 Valérian Polizzi
+// Last update Mon May 30 07:16:49 2016 Valérian Polizzi
 //
 
-#include "EntityManager.hh"
-
+#include <EntityManager.hh>
 
 EntityManager::EntityManager()
 {
+  _gentities = new GraphicEntityManager;
 }
 
 
@@ -75,4 +75,9 @@ AEntity*	EntityManager::operator[](const size_t i) const
   if (i >= _entities.size())
     return (NULL);
   return _entities[i];
+}
+
+GraphicEntityManager          *EntityManager::getGraphicEntityManager()
+{
+  return (_gentities);
 }

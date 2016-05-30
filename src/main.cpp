@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Mon Apr 25 11:03:51 2016 Valerian Polizzi
-// Last update Tue May 17 02:28:26 2016 Valérian Polizzi
+// Last update Mon May 30 06:59:17 2016 Valérian Polizzi
 //
 
 # include <Core.hh>
@@ -14,7 +14,7 @@
 
 int		main(int ac, char **av)
 {
-  Core		HyperSprint;
- 
+    Core		HyperSprint;
+
   return (0);
 }

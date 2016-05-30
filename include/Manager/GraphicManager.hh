@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:15:10 2016 Valérian Polizzi
-// Last update Mon May 30 03:11:08 2016 Valérian Polizzi
+// Last update Mon May 30 07:12:42 2016 Valérian Polizzi
 // Last update Mon May 30 11:29:42 2016 Loïc Weinhard
 //
 
@@ -41,6 +41,7 @@ private:
 
   ControllerManager		*_CM;
   SceneManager			*_SM;
+  
 public:
   GraphicManager();
   ~GraphicManager();
