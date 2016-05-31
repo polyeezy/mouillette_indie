@@ -1,11 +1,11 @@
 ##
 ## Makefile for indie_studio in /home/polyeezy/rendu/CPP/mouillette_indie
-## 
+##
 ## Made by Valerian Polizzi
 ## Login   <polyeezy@epitech.net>
-## 
+##
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Tue May 31 09:08:31 2016 Valérian Polizzi
+## Last update Tue May 31 10:14:05 2016 Valérian Polizzi
 ##
 
 CC		=		clang++
@@ -25,11 +25,13 @@ SRC		=		src/main.cpp				\
 				src/AEntities/AEntity.cpp		\
 				src/AEntities/EntityManager.cpp		\
 				src/AEntities/Button.cpp		\
+				src/Scenes/TestScene.cpp		\
+				src/Scenes/MainMenu.cpp			\
+				src/Scenes/Options.cpp			\
 				src/AEntities/GraphicEntity.cpp		\
 				src/AEntities/GraphicEntityManager.cpp		\
 				src/Entities/Square.cpp			\
 				src/Scenes/AScene.cpp			\
-				src/Scenes/TestScene.cpp		\
 
 OBJ		=		$(SRC:.cpp=.o)
 

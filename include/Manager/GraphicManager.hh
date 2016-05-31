@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:15:10 2016 Valérian Polizzi
-// Last update Mon May 30 07:12:42 2016 Valérian Polizzi
+// Last update Mon May 30 17:06:27 2016 Loïc Weinhard
 // Last update Mon May 30 11:29:42 2016 Loïc Weinhard
 //
 
@@ -26,7 +26,7 @@
 # define	Y_CENTER(height)	((RES_HEIGHT / 2) - (height / 2))
 
 # define	X_LEFT(width)		((RES_WIDTH * 0.25) - (width / 2))
-# define	Y_UP(width)		((RES_HEIGHT * 0.25) - (height / 2))
+# define	Y_UP(height)		((RES_HEIGHT * 0.25) - (height / 2))
 
 # define	X_RIGHT(width)		((RES_WIDTH * 0.75) - (width / 2))
 # define	Y_DOWN(height)		((RES_HEIGHT * 0.75) - (height / 2))
