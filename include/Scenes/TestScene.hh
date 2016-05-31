@@ -5,17 +5,18 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 02:47:19 2016 Valérian Polizzi
-// Last update Mon May 30 02:52:29 2016 Valérian Polizzi
+// Last update Tue May 31 09:44:37 2016 Valérian Polizzi
 //
 
 #ifndef _TESTSCENE_HH_
 # define _TESTSCENE_HH_
-# include <EntityManager.hh>
 
-class TestScene : public EntityManager
+# include <AScene.hh>
+
+class TestScene : public AScene
 {
 public:
-  TestScene();
+  TestScene(irr::scene::ISceneManager     *);
   ~TestScene();
 };
 

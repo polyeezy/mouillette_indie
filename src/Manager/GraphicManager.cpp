@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Mon May 30 07:21:59 2016 Valérian Polizzi
+// Last update Tue May 31 09:53:35 2016 Valérian Polizzi
 // Last update Mon May 30 14:06:18 2016 Marc MORANT
 //
 
@@ -25,20 +25,25 @@ GraphicManager::~GraphicManager()
 int	GraphicManager::init(const size_t &w, const size_t &h)
 {
   _SM = new SceneManager;
+  _CM = new ControllerManager;
 
-  _SM->preloadScene(new TestScene, "testScene");
-  _SM->loadScene("testScene");
   _device = irr::createDevice(irr::video::EDT_SOFTWARE, irr::core::dimension2d<irr::u32>(w, h), 16, false, false, false, _CM);
   _device->setWindowCaption(L"HyperSprint");
   _driver = _device->getVideoDriver();
-  _SM->getCurrentScene()->getGraphicEntityManager()->setScene(_device->getSceneManager());
+
+  _SM->preloadScene(new TestScene(_device->getSceneManager()), "testScene");
+  _SM->loadScene("testScene");
+  //  _SM->getCurrentScene()->getGraphicEntityManager()->setScene();
+
   return (0);
 }
 
 int	GraphicManager::render()
 {
   _driver->beginScene(true, true, irr::video::SColor(255,100,101,140));
-  _SM->getCurrentScene()->getGraphicEntityManager()->getScene()->drawAll();
+
+ 
+   _SM->getCurrentScene()->getGraphicEntityManager()->getScene()->drawAll();
   return (0);
 }
 

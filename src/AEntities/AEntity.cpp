@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:46 2016 Loïc Weinhard
-// Last update Mon May 30 15:43:53 2016 Loïc Weinhard
+// Last update Tue May 31 06:12:37 2016 Valérian Polizzi
 //
 
 #include "AEntity.hh"
@@ -16,8 +16,8 @@ AEntity::AEntity(Vec3* size, Vec3* pos, const AEntity::Type type, const std::str
   _pos = pos;
   _type = type;
   _model = model;
+  _gentity = new GraphicEntity;
 }
-
 
 AEntity::~AEntity()
 {
@@ -99,4 +99,9 @@ AEntity&	AEntity::operator=(const AEntity &entity)
   _type = entity.getType();
   this->setModel(entity.getModel());
   return (*this);
+}
+
+GraphicEntity		*AEntity::getGEntity()
+{
+  return (_gentity);
 }

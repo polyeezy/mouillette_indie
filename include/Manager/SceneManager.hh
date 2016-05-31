@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 02:29:19 2016 Valérian Polizzi
-// Last update Mon May 30 07:05:08 2016 Valérian Polizzi
+// Last update Tue May 31 09:45:23 2016 Valérian Polizzi
 //
 
 #ifndef _SCENEMANAGER_HH_
@@ -15,19 +15,24 @@
 # include <map>
 # include <string>
 # include <Entities.hh>
+# include <AScene.hh>
 
 class SceneManager
 {
  private:
-  EntityManager				*_currentScene;
-  std::map<std::string, EntityManager*>	_scenes;
- public:
+
+  AScene					*_currentScene;
+  std::map<std::string, AScene*>		_scenes; 
+public:
   SceneManager();
   ~SceneManager();
   int		init();
-  int		preloadScene(EntityManager *scene, const std::string &name);
+  int		preloadScene(AScene *scene, const std::string &name);
   int		loadScene(const std::string &sceneName);
-  EntityManager	*getCurrentScene();
+ 
+  AScene	*getCurrentScene();
+
+  //  GraphicEntityManager          *getGraphicEntityManager();
 };
 
 

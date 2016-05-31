@@ -5,13 +5,14 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:08 2016 Loïc Weinhard
-// Last update Mon May 30 07:22:09 2016 Valérian Polizzi
+// Last update Tue May 31 09:13:37 2016 Valérian Polizzi
 //
 
 #ifndef AENTITY_HH_
 # define AENTITY_HH_
 
 # include "Vec3.hh"
+# include <GraphicEntity.hh>
 
 class	AEntity
 {
@@ -25,7 +26,7 @@ private:
   Vec3*			_pos;
   AEntity::Type		_type;
   std::string		_model;
-  
+  GraphicEntity		*_gentity;  
 public:
   AEntity(Vec3* size = NULL, Vec3* pos = NULL, const AEntity::Type = UNDEFINED, const std::string &model = "");
   ~AEntity();
@@ -43,6 +44,9 @@ public:
   void		setModel(const std::string &);
 
   AEntity&	operator=(const AEntity &);
+
+  GraphicEntity	*getGEntity();
+  void		setGEntity();
 };
 
 #endif

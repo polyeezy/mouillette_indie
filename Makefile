@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Mon May 30 07:21:30 2016 Valérian Polizzi
+## Last update Tue May 31 09:08:31 2016 Valérian Polizzi
 ##
 
 CC		=		clang++
@@ -25,11 +25,11 @@ SRC		=		src/main.cpp				\
 				src/AEntities/AEntity.cpp		\
 				src/AEntities/EntityManager.cpp		\
 				src/AEntities/Button.cpp		\
-				src/Scenes/TestScene.cpp		\
-				src/Scenes/MainMenu.cpp			\
-				src/Entities/Entity.cpp			\
 				src/AEntities/GraphicEntity.cpp		\
 				src/AEntities/GraphicEntityManager.cpp		\
+				src/Entities/Square.cpp			\
+				src/Scenes/AScene.cpp			\
+				src/Scenes/TestScene.cpp		\
 
 OBJ		=		$(SRC:.cpp=.o)
 
@@ -43,7 +43,7 @@ LDFLAGS		+=		-lGL -lXxf86vm -lXext -lX11 -lXcursor
 USERCXXFLAGS 	= 		-O3 -ffast-math
 CXXFLAGS 	= 		$(USERCXXFLAGS)
 
-CXXFLAGS	+=		-Wall -Wextra -Werror -Wno-unused-variable -Wno-unused-parameter $(INCLUDES) -std=c++11
+CXXFLAGS	+=		-Wall -Wextra -Werror -Wno-unused-variable -Wno-unused-parameter $(INCLUDES) -std=c++11 -g3
 
 MR_CLEAN        =               find ./ \( -name "*~" -o -name "\#*\#" \) -delete
 

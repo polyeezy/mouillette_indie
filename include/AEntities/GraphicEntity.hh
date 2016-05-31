@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 05:13:12 2016 Valérian Polizzi
-// Last update Mon May 30 06:29:42 2016 Valérian Polizzi
+// Last update Tue May 31 06:05:43 2016 Valérian Polizzi
 //
 
 #ifndef _GRAPHICENTITY_HH_
@@ -16,10 +16,13 @@
 class GraphicEntity
 {
 private:
-  irr::scene::ISceneNode	*entity;
+  irr::scene::ISceneNode	*_entity;
 public:
   GraphicEntity();
   ~GraphicEntity();
+
+  void		setGraphic(irr::scene::ISceneNode *);
+  irr::scene::ISceneNode		*getGraphic();
 
 };
 

@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 05:56:40 2016 Valérian Polizzi
-// Last update Mon May 30 06:52:03 2016 Valérian Polizzi
+// Last update Tue May 31 08:09:38 2016 Valérian Polizzi
 //
 
 #ifndef _GRAPHICENTITYMANAGER_HH_
@@ -20,8 +20,11 @@ private:
 public:
   GraphicEntityManager();
   ~GraphicEntityManager();
+ 
   irr::scene::ISceneManager *getScene();
   void	setScene(irr::scene::ISceneManager *);
+
+  irr::scene::ISceneNode	*createCube();
 };
 
 #endif

@@ -5,14 +5,15 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 17:33:48 2016 Loïc Weinhard
-// Last update Mon May 30 07:16:49 2016 Valérian Polizzi
+// Last update Tue May 31 08:40:45 2016 Valérian Polizzi
 //
 
 #include <EntityManager.hh>
 
 EntityManager::EntityManager()
 {
-  _gentities = new GraphicEntityManager;
+  //  _gentities = new GraphicEntityManager;
+  // _scene = scene;
 }
 
 
@@ -30,6 +31,12 @@ const std::vector<AEntity *>	EntityManager::getEntities()
 void	EntityManager::addEntity(AEntity *entity)
 {
   _entities.push_back(entity);
+
+  //ISceneNode* cube = _gentities->createCube();
+  // cube->setPosition(vector3df(0,0,5));
+  //cube->setPosition(vector3df(X, Y, Z));
+  
+  // _gentities->push(scene);
 }
 
 
@@ -77,7 +84,3 @@ AEntity*	EntityManager::operator[](const size_t i) const
   return _entities[i];
 }
 
-GraphicEntityManager          *EntityManager::getGraphicEntityManager()
-{
-  return (_gentities);
-}
