@@ -1,9 +1,9 @@
 //
 // MainMenu.cpp for  in /home/weinha_l/Semestre_4/mouillette_indie/src/Scenes
-// 
+//
 // Made by Loïc Weinhard
 // Login   <weinha_l@epitech.net>
-// 
+//
 // Started on  Wed May 18 13:22:54 2016 Loïc Weinhard
 // Last update Mon May 30 17:05:29 2016 Loïc Weinhard
 //
