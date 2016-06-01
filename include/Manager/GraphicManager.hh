@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:15:10 2016 Valérian Polizzi
-// Last update Mon May 30 17:06:27 2016 Loïc Weinhard
+// Last update Wed Jun  1 14:54:09 2016 Gonzague PAGIN
 // Last update Mon May 30 11:29:42 2016 Loïc Weinhard
 //
 
@@ -17,6 +17,7 @@
 # include <irrlicht.h>
 # include <ControllerManager.hh>
 # include <SceneManager.hh>
+# include <SoundManager.hh>
 # include <Scenes.hh>
 
 # define	RES_WIDTH	1280
@@ -41,13 +42,14 @@ private:
 
   ControllerManager		*_CM;
   SceneManager			*_SM;
-  
+  SoundManager			*_SNDM;
 public:
   GraphicManager();
   ~GraphicManager();
 
   ControllerManager	*getControllerManager();
   SceneManager		*getSceneManager();
+  SoundManager		*getSoundManager();
 
   bool			isRunning() const;
   int			render();
