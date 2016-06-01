@@ -5,8 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:15:10 2016 Valérian Polizzi
-// Last update Wed Jun  1 06:00:51 2016 Valérian Polizzi
-// Last update Mon May 30 11:29:42 2016 Loïc Weinhard
+// Last update Wed Jun  1 06:02:29 2016 Valérian Polizzi
 //
 
 #ifndef _GRAPHICMANAGER_HH_
@@ -18,6 +17,7 @@
 # include <ControllerManager.hh>
 # include <SceneManager.hh>
 # include <CameraManager.hh>
+# include <SoundManager.hh>
 # include <Scenes.hh>
 
 # define	RES_WIDTH	1280
@@ -41,13 +41,14 @@ private:
   ControllerManager		*_CM;
   SceneManager			*_SM;
   CameraManager			*_CAMM;
-  
+  SoundManager			*_SNDM;
 public:
   GraphicManager();
   ~GraphicManager();
 
   ControllerManager	*getControllerManager();
   SceneManager		*getSceneManager();
+  SoundManager		*getSoundManager();
 
   bool			isRunning() const;
   int			render();

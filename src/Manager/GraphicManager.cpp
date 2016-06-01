@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Wed Jun  1 06:00:28 2016 Valérian Polizzi
+// Last update Wed Jun  1 06:02:50 2016 Valérian Polizzi
 //
 
 #include <MainMenu.hh>
@@ -27,11 +27,11 @@ int	GraphicManager::init(const size_t &w, const size_t &h)
   _SM = new SceneManager;
   _CM = new ControllerManager;
   _CAMM = new CameraManager;
-
+  _SNDM = new SoundManager;
+  
   _device = irr::createDevice(irr::video::EDT_OPENGL, irr::core::dimension2d<irr::u32>(w, h), 16, false, false, false, _CM);
   _device->setWindowCaption(L"HyperSprint");
   _driver = _device->getVideoDriver();
-
 
   _SM->preloadScene(new TestScene(_device->getSceneManager()), "testScene");
   _SM->loadScene("testScene");
@@ -62,6 +62,8 @@ int	GraphicManager::refresh()
 
 int	GraphicManager::openWindow()
 {
+  this->getSoundManager()->addSound("test", "./assets/test.wav");
+  this->getSoundManager()->playSound("test");
   while (this->isRunning())
     {
       this->render();
@@ -78,4 +80,9 @@ SceneManager	*GraphicManager::getSceneManager()
 ControllerManager	*GraphicManager::getControllerManager()
 {
   return (this->_CM);
+}
+
+SoundManager            *GraphicManager::getSoundManager()
+{
+  return (this->_SNDM);
 }
