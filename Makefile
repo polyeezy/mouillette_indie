@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ##
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Wed Jun  1 14:25:06 2016 Gonzague PAGIN
+## Last update Wed Jun  1 05:56:21 2016 Valérian Polizzi
 ##
 
 CC		=		clang++
@@ -22,6 +22,7 @@ SRC		=		src/main.cpp				\
 				src/Manager/SoundManager.cpp		\
 				src/Manager/ControllerManager.cpp	\
 				src/Manager/SceneManager.cpp		\
+				src/Manager/CameraManager.cpp		\
 				src/General/Vec3.cpp			\
 				src/AEntities/AEntity.cpp		\
 				src/AEntities/EntityManager.cpp		\

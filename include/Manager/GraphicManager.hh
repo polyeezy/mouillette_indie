@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:15:10 2016 Valérian Polizzi
-// Last update Mon May 30 17:06:27 2016 Loïc Weinhard
+// Last update Wed Jun  1 06:00:51 2016 Valérian Polizzi
 // Last update Mon May 30 11:29:42 2016 Loïc Weinhard
 //
 
@@ -17,6 +17,7 @@
 # include <irrlicht.h>
 # include <ControllerManager.hh>
 # include <SceneManager.hh>
+# include <CameraManager.hh>
 # include <Scenes.hh>
 
 # define	RES_WIDTH	1280
@@ -36,11 +37,10 @@ class GraphicManager
 private:
   irr::IrrlichtDevice		*_device;
   irr::video::IVideoDriver*	_driver;
-  irr::scene::ISceneManager*	_smgr;
-  irr::gui::IGUIEnvironment*	_guienv;
 
   ControllerManager		*_CM;
   SceneManager			*_SM;
+  CameraManager			*_CAMM;
   
 public:
   GraphicManager();
