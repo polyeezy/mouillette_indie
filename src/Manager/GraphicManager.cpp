@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Tue May 31 10:08:02 2016 Valérian Polizzi
+// Last update Wed Jun  1 05:42:42 2016 Valérian Polizzi
 //
 
 #include <MainMenu.hh>
@@ -27,14 +27,16 @@ int	GraphicManager::init(const size_t &w, const size_t &h)
   _SM = new SceneManager;
   _CM = new ControllerManager;
 
-  _device = irr::createDevice(irr::video::EDT_SOFTWARE, irr::core::dimension2d<irr::u32>(w, h), 16, false, false, false, _CM);
+  _device = irr::createDevice(irr::video::EDT_OPENGL, irr::core::dimension2d<irr::u32>(w, h), 16, false, false, false, _CM);
   _device->setWindowCaption(L"HyperSprint");
   _driver = _device->getVideoDriver();
 
+
   _SM->preloadScene(new TestScene(_device->getSceneManager()), "testScene");
   _SM->loadScene("testScene");
+  irr::scene::ICameraSceneNode	*cam = _SM->getCurrentScene()->getGraphicEntityManager()->getScene()->addCameraSceneNode(0, irr::core::vector3df(0, 150, -100), irr::core::vector3df(0, -200, 50));
   //  _SM->getCurrentScene()->getGraphicEntityManager()->setScene();
-
+  
   return (0);
 }
 
