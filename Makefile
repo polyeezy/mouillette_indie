@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ##
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Wed Jun  1 05:56:21 2016 Valérian Polizzi
+## Last update Wed Jun  1 15:29:02 2016 Gonzague PAGIN
 ##
 
 CC		=		clang++
@@ -56,7 +56,7 @@ all		:		$(NAME)
 
 $(NAME)		:		$(OBJ)
 				$(CC) $(OBJ) -o $(NAME) $(CXXFLAGS) -lpthread $(LDFLAGS)
-				echo "#!/bin/bash\nexport LD_LIBRARY_PATH=$(PWD)/lib/IrrLicht/lib/Linux\n./hyperSprint" > run.sh
+				printf "#!/bin/bash\nexport LD_LIBRARY_PATH=$(PWD)/lib/IrrLicht/lib/Linux\n./hyperSprint" > run.sh
 				chmod +x run.sh
 
 install		:		$(NAME)
