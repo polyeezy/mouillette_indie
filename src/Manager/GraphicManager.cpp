@@ -5,14 +5,16 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Tue May 17 08:17:21 2016 Valérian Polizzi
+// Last update Wed Jun  1 06:02:50 2016 Valérian Polizzi
 //
 
+#include <MainMenu.hh>
 #include <GraphicManager.hh>
 
 GraphicManager::GraphicManager()
 {
-  _CM.importConf();
+  _CM = new ControllerManager;
+  _CM->importConf();
 }
 
 GraphicManager::~GraphicManager()
@@ -22,19 +24,29 @@ GraphicManager::~GraphicManager()
 
 int	GraphicManager::init(const size_t &w, const size_t &h)
 {
-  _device = irr::createDevice(irr::video::EDT_SOFTWARE, irr::core::dimension2d<irr::u32>(w, h), 16, false, false, false, &_CM);
+  _SM = new SceneManager;
+  _CM = new ControllerManager;
+  _CAMM = new CameraManager;
+  _SNDM = new SoundManager;
+  
+  _device = irr::createDevice(irr::video::EDT_OPENGL, irr::core::dimension2d<irr::u32>(w, h), 16, false, false, false, _CM);
   _device->setWindowCaption(L"HyperSprint");
   _driver = _device->getVideoDriver();
-  _smgr = _device->getSceneManager();
-  _guienv = _device->getGUIEnvironment();
+
+  _SM->preloadScene(new TestScene(_device->getSceneManager()), "testScene");
+  _SM->loadScene("testScene");
+  _CAMM->setCamera(_SM->getCurrentScene()->getGraphicEntityManager()->getScene()->addCameraSceneNode(0, irr::core::vector3df(0, 150, -100), irr::core::vector3df(0, -200, 50)));
+
+  //  irr::scene::ICameraSceneNode	*cam = ;
+  //  _SM->getCurrentScene()->getGraphicEntityManager()->setScene();
+  
   return (0);
 }
 
 int	GraphicManager::render()
 {
   _driver->beginScene(true, true, irr::video::SColor(255,100,101,140));
-  _smgr->drawAll();
-  _guienv->drawAll();
+  _SM->getCurrentScene()->getGraphicEntityManager()->getScene()->drawAll();
   return (0);
 }
 
@@ -50,6 +62,8 @@ int	GraphicManager::refresh()
 
 int	GraphicManager::openWindow()
 {
+  this->getSoundManager()->addSound("test", "./assets/test.wav");
+  this->getSoundManager()->playSound("test");
   while (this->isRunning())
     {
       this->render();
@@ -58,7 +72,17 @@ int	GraphicManager::openWindow()
   return (0);
 }
 
-const ControllerManager	&GraphicManager::getControllerManager()
+SceneManager	*GraphicManager::getSceneManager()
+{
+  return (this->_SM);
+}
+
+ControllerManager	*GraphicManager::getControllerManager()
 {
   return (this->_CM);
+}
+
+SoundManager            *GraphicManager::getSoundManager()
+{
+  return (this->_SNDM);
 }
