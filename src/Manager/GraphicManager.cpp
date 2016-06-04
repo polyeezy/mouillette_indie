@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Fri Jun  3 14:41:47 2016 Gonzague PAGIN
+// Last update Sat Jun  4 16:16:58 2016 Gonzague PAGIN
 //
 
 #include <MainMenu.hh>
@@ -63,7 +63,7 @@ int	GraphicManager::refresh()
 int	GraphicManager::openWindow()
 {
   this->getSoundManager()->addSound("test", "./assets/test.wav");
-  this->getSoundManager()->playSound("test");
+  this->getSoundManager()->playSound("test", 0.1);
   while (this->isRunning())
     {
       this->render();
