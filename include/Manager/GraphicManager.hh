@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:15:10 2016 Valérian Polizzi
-// Last update Wed Jun  1 06:02:29 2016 Valérian Polizzi
+// Last update Sun Jun  5 03:20:39 2016 Valérian Polizzi
 //
 
 #ifndef _GRAPHICMANAGER_HH_
@@ -36,8 +36,7 @@ class GraphicManager
 {
 private:
   irr::IrrlichtDevice		*_device;
-  irr::video::IVideoDriver*	_driver;
-
+  irr::video::IVideoDriver	*_driver;
   ControllerManager		*_CM;
   SceneManager			*_SM;
   CameraManager			*_CAMM;

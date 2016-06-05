@@ -5,17 +5,18 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:46 2016 Loïc Weinhard
-// Last update Tue May 31 06:12:37 2016 Valérian Polizzi
+// Last update Sat Jun  4 10:29:44 2016 Valérian Polizzi
 //
 
 #include "AEntity.hh"
 
-AEntity::AEntity(Vec3* size, Vec3* pos, const AEntity::Type type, const std::string &model)
+AEntity::AEntity(Vec3* size, Vec3* pos, const AEntity::Type type, const std::string &model, const std::string &value)
 {
   _size = size;
   _pos = pos;
   _type = type;
   _model = model;
+  _value = value;
   _gentity = new GraphicEntity;
 }
 
@@ -48,6 +49,11 @@ std::string	AEntity::getModel() const
   return (_model);
 }
 
+std::string	AEntity::getValue() const
+{
+  return (_value);
+}
+
 
 void	AEntity::setSize(const float width, const float height, const float depth)
 {
@@ -62,6 +68,7 @@ void	AEntity::setSize(const Vec3* size)
   _size->setX(size->getX());
   _size->setY(size->getY());
   _size->setZ(size->getZ());
+  this->getGEntity()->getGraphic()->setScale(irr::core::vector3df(0, 0, 0));
 }
 
 
@@ -84,6 +91,11 @@ void	AEntity::setPos(const Vec3* pos)
 void	AEntity::setType(const AEntity::Type type)
 {
   _type = type;
+}
+
+void	AEntity::setValue(const std::string &value)
+{
+  _value = value;
 }
 
 

@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 02:33:27 2016 Valérian Polizzi
-// Last update Tue May 31 09:46:11 2016 Valérian Polizzi
+// Last update Sun Jun  5 03:16:08 2016 Valérian Polizzi
 //
 
 #include <SceneManager.hh>
@@ -38,9 +38,22 @@ int		SceneManager::preloadScene(AScene *scene, const std::string &sceneName)
 
 int		SceneManager::loadScene(const std::string &sceneName)
 {
-  std::cout << "LOADING SCENE : " << sceneName << std::endl;
   _currentScene = _scenes[sceneName];
- 
+  if (_currentScene->getNbItems() > 0 && _currentScene)
+    this->clear();
+  _currentScene->addElements();
   std::cout << "SETTING GRAPHIC SCENE" << std::endl;
+  return (0);
+}
+
+int		SceneManager::clear()
+{
+  int		i = 0;
+
+  while (i != _currentScene->getNbItems())
+    {
+      _currentScene->getEntityManager()->getEntities()[i]->getGEntity()->getGraphic()->remove();
+      i++;
+    }
   return (0);
 }

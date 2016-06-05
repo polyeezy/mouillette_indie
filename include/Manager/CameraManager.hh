@@ -5,13 +5,14 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Wed Jun  1 05:44:24 2016 Valérian Polizzi
-// Last update Wed Jun  1 05:56:42 2016 Valérian Polizzi
+// Last update Thu Jun  2 03:11:33 2016 Valérian Polizzi
 //
 
 #ifndef _CAMERAMANAGER_HH_
 # define _CAMERAMANAGER_HH_
 
 # include <irrlicht.h>
+# include <Vec3.hh>
 
 class CameraManager
 {
@@ -23,7 +24,6 @@ public:
 
   int		setCamera(irr::scene::ICameraSceneNode  *);
   irr::scene::ICameraSceneNode  *getCamera();
-
 };
 
 #endif

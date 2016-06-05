@@ -5,18 +5,19 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon May 30 14:33:40 2016 Loïc Weinhard
-// Last update Mon May 30 16:04:20 2016 Loïc Weinhard
+// Last update Sat Jun  4 10:32:16 2016 Valérian Polizzi
 //
 
 #include "Button.hh"
 
-Button::Button(Vec3 *size, Vec3 *pos, const std::string &lbl, int bg_color, int border_color, int label_color, int label_size) : AEntity(size, pos, AEntity::Type::MENUITEM, "")
+Button::Button(Vec3 *size, Vec3 *pos, const std::string &lbl, int bg_color, int border_color, int label_color, int label_size, const std::string &value) : AEntity(size, pos, AEntity::Type::MENUITEM, "", value)
 {
   _bg_color = bg_color;
   _border_color = border_color;
   _label_color = label_color;
   _label_size = label_size;
   _label = lbl;
+  this->setModel(lbl);
 }
 
 Button::~Button()

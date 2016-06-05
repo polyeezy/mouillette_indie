@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 02:29:19 2016 Valérian Polizzi
-// Last update Tue May 31 09:45:23 2016 Valérian Polizzi
+// Last update Sun Jun  5 02:30:35 2016 Valérian Polizzi
 //
 
 #ifndef _SCENEMANAGER_HH_
@@ -22,6 +22,8 @@ class SceneManager
  private:
 
   AScene					*_currentScene;
+  irr::video::IVideoDriver*			_driver;
+  
   std::map<std::string, AScene*>		_scenes; 
 public:
   SceneManager();
@@ -31,7 +33,7 @@ public:
   int		loadScene(const std::string &sceneName);
  
   AScene	*getCurrentScene();
-
+  int		clear();
   //  GraphicEntityManager          *getGraphicEntityManager();
 };
 

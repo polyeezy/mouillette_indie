@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Wed Jun  1 05:44:06 2016 Valérian Polizzi
-// Last update Wed Jun  1 05:55:17 2016 Valérian Polizzi
+// Last update Thu Jun  2 03:10:52 2016 Valérian Polizzi
 //
 
 #include <CameraManager.hh>
@@ -28,3 +28,4 @@ irr::scene::ICameraSceneNode  *CameraManager::getCamera()
 {
   return (_camera);
 }
+

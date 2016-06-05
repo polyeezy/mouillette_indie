@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 05:58:38 2016 Valérian Polizzi
-// Last update Tue May 31 06:47:15 2016 Valérian Polizzi
+// Last update Sat Jun  4 10:10:18 2016 Valérian Polizzi
 //
 
 #include <GraphicEntityManager.hh>
@@ -23,12 +23,20 @@ irr::scene::ISceneNode	*GraphicEntityManager::createCube()
   return (_scene->addCubeSceneNode());
 }
 
-void GraphicEntityManager::setScene(irr::scene::ISceneManager *scene)
-{
-  _scene = scene;
-}
-
 irr::scene::ISceneManager	*GraphicEntityManager::getScene()
 {
   return (_scene);
+}
+
+irr::scene::IMeshSceneNode         *GraphicEntityManager::createObject(const std::string &path)
+{
+  irr::scene::IMesh				*mesh = _scene->getMesh(path.c_str());
+  if (mesh)
+    return (_scene->addMeshSceneNode(mesh));
+  return (NULL);
+}
+
+void				GraphicEntityManager::setScene(irr::scene::ISceneManager *scene)
+{
+  _scene = scene;
 }

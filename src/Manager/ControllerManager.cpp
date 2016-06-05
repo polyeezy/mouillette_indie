@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:44:53 2016 Loïc Weinhard
-// Last update Mon May 30 14:02:22 2016 Marc MORANT
+// Last update Sun Jun  5 05:35:35 2016 Valérian Polizzi
 //
 
 #include "ControllerManager.hh"
@@ -65,62 +65,71 @@ bool  ControllerManager::isKeyDown(const e_control enumKey) const
   return this->_keysDown[enumKey];
 }
 
-bool ControllerManager::OnEvent(const irr::SEvent &event)
-{
-  if (event.EventType == irr::EET_KEY_INPUT_EVENT)
-    {
-      int       realKey = -1;
-
-      for (std::map<int, int>::iterator it = _key_map.begin(); it != _key_map.end(); it++)
-	{
-          if (it->first == event.KeyInput.Key)
-            realKey = it->second;
-        }
-      if (realKey != -1)
-	this->_keysDown[realKey] = event.KeyInput.PressedDown;
-    }
-  return false;
-}
-
 // bool ControllerManager::OnEvent(const irr::SEvent &event)
 // {
 //   if (event.EventType == irr::EET_KEY_INPUT_EVENT)
 //     {
-//       {
-// 	if (event.EventType == irr::EET_KEY_INPUT_EVENT && !event.KeyInput.PressedDown)
-// 	  {
-// 	    std::cout << "KEY PRESSED : " << event.KeyInput.Key;
-// 	    std::cout << "[" << _key_map[event.KeyInput.Key] << "]";
-// 	    switch (_key_map[event.KeyInput.Key])
-// 	      {
-// 	      case ControllerManager::Control::UP:
-// 		std::cout << "(UP)" << std::endl;
-// 		break;
-// 	      case ControllerManager::Control::DOWN:
-// 		std::cout << "(DOWN)" << std::endl;
-// 		break;
-// 	      case ControllerManager::Control::LEFT:
-// 		std::cout << "(LEFT)" << std::endl;
-// 		break;
-// 	      case ControllerManager::Control::RIGHT:
-// 		std::cout << "(RIGHT)" << std::endl;
-// 		break;
-// 	      case ControllerManager::Control::ESCAPE:
-// 		std::cout << "(ESCAPE)" << std::endl;
-// 		break;
-// 	      case ControllerManager::Control::PAUSE:
-// 		std::cout << "(PAUSE)" << std::endl;
-// 		break;
-// 	      case ControllerManager::Control::ACTION:
-// 		std::cout << "(ACTION)" << std::endl;
-// 		break;
-// 	      default:
-// 		std::cout << "(unkown)" << std::endl;
-// 		break;
-// 	      }
-// 	  }
-// 	return true;
-//       }
+//       int       realKey = -1;
+
+//       for (std::map<int, int>::iterator it = _key_map.begin(); it != _key_map.end(); it++)
+// 	{
+//           if (it->first == event.KeyInput.Key)
+//             realKey = it->second;
+//         }
+//       if (realKey != -1)
+// 	this->_keysDown[realKey] = event.KeyInput.PressedDown;
 //     }
 //   return false;
 // }
+
+bool ControllerManager::OnEvent(const irr::SEvent &event)
+{
+  if (event.EventType == irr::EET_KEY_INPUT_EVENT)
+    {
+      {
+	if (event.EventType == irr::EET_KEY_INPUT_EVENT && !event.KeyInput.PressedDown)
+	  {
+	    	    std::cout << "KEY PRESSED : " << event.KeyInput.Key;
+	    std::cout << "[" << _key_map[event.KeyInput.Key] << "]";
+	    switch (_key_map[event.KeyInput.Key])
+	      {
+	      case ControllerManager::Control::UP:
+		
+		//	std::cout << "(UP)" << std::endl;
+		_scene->getCurrentScene()->doUp();
+		break;
+	      case ControllerManager::Control::DOWN:
+		_scene->getCurrentScene()->doDown();
+		break;
+	      case ControllerManager::Control::LEFT:
+		std::cout << "(LEFT)" << std::endl;
+		break;
+	      case ControllerManager::Control::RIGHT:
+		std::cout << "(RIGHT)" << std::endl;
+		break;
+	      case ControllerManager::Control::ESCAPE:
+		std::cout << "(ESCAPE)" << std::endl;
+		break;
+	      case ControllerManager::Control::PAUSE:
+		std::cout << "(PAUSE)" << std::endl;
+		break;
+	      case ControllerManager::Control::ACTION:
+		//_scene->clear();
+		//		_scene->loadScene("MainMenu2");
+		break;
+	      default:
+		std::cout << "(unkown)" << std::endl;
+		break;
+	      }
+	  }
+	return true;
+      }
+    }
+  return false;
+}
+
+int		ControllerManager::linkScene(SceneManager *scene)
+{
+  _scene = scene;
+  return (0);
+}

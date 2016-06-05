@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Wed Jun  1 06:02:50 2016 Valérian Polizzi
+// Last update Sun Jun  5 03:44:31 2016 Valérian Polizzi
 //
 
 #include <MainMenu.hh>
@@ -13,8 +13,6 @@
 
 GraphicManager::GraphicManager()
 {
-  _CM = new ControllerManager;
-  _CM->importConf();
 }
 
 GraphicManager::~GraphicManager()
@@ -24,22 +22,28 @@ GraphicManager::~GraphicManager()
 
 int	GraphicManager::init(const size_t &w, const size_t &h)
 {
+  _CM = new ControllerManager;
   _SM = new SceneManager;
   _CM = new ControllerManager;
   _CAMM = new CameraManager;
   _SNDM = new SoundManager;
   
+  _CM->importConf();
   _device = irr::createDevice(irr::video::EDT_OPENGL, irr::core::dimension2d<irr::u32>(w, h), 16, false, false, false, _CM);
-  _device->setWindowCaption(L"HyperSprint");
-  _driver = _device->getVideoDriver();
 
-  _SM->preloadScene(new TestScene(_device->getSceneManager()), "testScene");
-  _SM->loadScene("testScene");
-  _CAMM->setCamera(_SM->getCurrentScene()->getGraphicEntityManager()->getScene()->addCameraSceneNode(0, irr::core::vector3df(0, 150, -100), irr::core::vector3df(0, -200, 50)));
+  _device->setWindowCaption(L"HyperSprint");
+   _driver = _device->getVideoDriver();
+
+  _SM->preloadScene(new MainMenu(_device->getSceneManager()), "MainMenu");
+  _SM->loadScene("MainMenu");
+  _CAMM->setCamera(_SM->getCurrentScene()->getGraphicEntityManager()->getScene()->addCameraSceneNode(0, irr::core::vector3df(0, 0, -100), irr::core::vector3df(0, 0, 0)));
+
+  _CM->linkScene(_SM);
+
+  //  _SM->getCurrentScene()->runScene(_CM);
 
   //  irr::scene::ICameraSceneNode	*cam = ;
   //  _SM->getCurrentScene()->getGraphicEntityManager()->setScene();
-  
   return (0);
 }
 
@@ -62,9 +66,10 @@ int	GraphicManager::refresh()
 
 int	GraphicManager::openWindow()
 {
-  this->getSoundManager()->addSound("test", "./assets/test.wav");
-  this->getSoundManager()->playSound("test");
-  while (this->isRunning())
+    this->getSoundManager()->addSound("test", "./assets/Menu.wav");
+    this->getSoundManager()->playSound("test");
+    
+    while (this->isRunning())
     {
       this->render();
       this->refresh();

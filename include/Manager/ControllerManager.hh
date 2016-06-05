@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:38:00 2016 Loïc Weinhard
-// Last update Mon May 30 14:03:27 2016 Marc MORANT
+// Last update Sat Jun  4 10:52:39 2016 Valérian Polizzi
 //
 
 #ifndef CONTROLLERMANAGER_HH_
@@ -18,6 +18,8 @@
 # include <fstream>
 # include <iostream>
 # include <sstream>
+# include <SceneManager.hh>
+
 # define CM_CONF_PATH   "conf/keys.conf"
 # define CM_CONTROL_COUNT	7
 
@@ -33,6 +35,7 @@ private:
   std::map<int, int>	_key_map;
   std::string		_path;
   bool			_keysDown[CM_CONTROL_COUNT];
+  SceneManager		*_scene;
 public:
   ControllerManager();
   ~ControllerManager(){};
@@ -41,10 +44,10 @@ public:
   void	exportConf();
   void	setConfPath(const std::string &);
   void	setMapKey(const int, const int);
-  void          mapKey(const int key, const int value);
-
-  bool OnEvent(const irr::SEvent &event);
+  void  mapKey(const int key, const int value);
+  bool	OnEvent(const irr::SEvent &event);
   bool  isKeyDown(const e_control enumKey) const;
+  int	linkScene(SceneManager *);
 };
 
 #endif

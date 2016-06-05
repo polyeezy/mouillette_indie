@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ##
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Wed Jun  1 15:29:02 2016 Gonzague PAGIN
+## Last update Sun Jun  5 03:29:15 2016 Valérian Polizzi
 ##
 
 CC		=		clang++
@@ -27,13 +27,12 @@ SRC		=		src/main.cpp				\
 				src/AEntities/AEntity.cpp		\
 				src/AEntities/EntityManager.cpp		\
 				src/AEntities/Button.cpp		\
-				src/Scenes/TestScene.cpp		\
 				src/Scenes/MainMenu.cpp			\
 				src/Scenes/Options.cpp			\
 				src/AEntities/GraphicEntity.cpp		\
 				src/AEntities/GraphicEntityManager.cpp		\
-				src/Entities/Square.cpp			\
 				src/Scenes/AScene.cpp			\
+				src/Scenes/AMenu.cpp			\
 
 OBJ		=		$(SRC:.cpp=.o)
 
