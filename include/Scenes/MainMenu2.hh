@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 //
 // Started on  Wed May 18 13:21:30 2016 Loïc Weinhard
-// Last update Sun Jun  5 07:16:03 2016 Valérian Polizzi
+// Last update Mon Jun  6 19:00:59 2016 Marc MORANT
 //
 
 #ifndef MAINMENU2_HH_
@@ -23,6 +23,8 @@ public:
   int		runScene();
   void		doUp();
   void		doDown();
+  void		doLeft();
+  void		doRight();
   void		doAction();
 };
 

@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Sat Jun  4 08:13:57 2016 Valérian Polizzi
-// Last update Mon Jun  6 05:36:30 2016 Valérian Polizzi
+// Last update Mon Jun  6 19:05:44 2016 Marc MORANT
 //
 
 #include <AMenu.hh>
@@ -65,6 +65,12 @@ void            AMenu::doDown()
 {
   this->nextMenuItem();
 }
+
+void            AMenu::doLeft()
+{}
+
+void            AMenu::doRight()
+{}
 
 void            AMenu::doAction()
 {

@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 //
 // Started on  Wed May 18 13:22:54 2016 Loïc Weinhard
-// Last update Sun Jun  5 07:15:49 2016 Valérian Polizzi
+// Last update Mon Jun  6 19:01:30 2016 Marc MORANT
 //
 
 #include "GraphicManager.hh"
@@ -40,6 +40,12 @@ void		MainMenu2::doDown()
 {
   this->nextMenuItem();
 }
+
+void		MainMenu2::doLeft()
+{}
+
+void		MainMenu2::doRight()
+{}
 
 void		MainMenu2::doAction()
 {

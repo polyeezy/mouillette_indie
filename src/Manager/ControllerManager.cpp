@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:44:53 2016 Loïc Weinhard
-// Last update Mon Jun  6 08:20:03 2016 Valérian Polizzi
+// Last update Mon Jun  6 18:39:54 2016 Marc MORANT
 //
 
 #include "ControllerManager.hh"
@@ -87,6 +87,17 @@ bool ControllerManager::OnEvent(const irr::SEvent &event)
   if (event.EventType == irr::EET_KEY_INPUT_EVENT)
     {
       {
+	int       realKey = -1;
+	
+	for (std::map<int, int>::iterator it = _key_map.begin(); it != _key_map.end(); it++)
+	  {
+	    if (it->first == event.KeyInput.Key)
+	      realKey = it->second;
+	    }
+	if (realKey != -1)
+	  this->_keysDown[realKey] = event.KeyInput.PressedDown;
+      }
+      {
 	if (event.EventType == irr::EET_KEY_INPUT_EVENT && event.KeyInput.PressedDown)
 	  {
 	    switch (_key_map[event.KeyInput.Key])
@@ -99,8 +110,10 @@ bool ControllerManager::OnEvent(const irr::SEvent &event)
 		break;
 	      case ControllerManager::Control::LEFT:
 		std::cout << "(LEFT)" << std::endl;
+		_scene->getCurrentScene()->doLeft();
 		break;
 	      case ControllerManager::Control::RIGHT:
+		_scene->getCurrentScene()->doRight();
 		std::cout << "(RIGHT)" << std::endl;
 		break;
 	      case ControllerManager::Control::ESCAPE:

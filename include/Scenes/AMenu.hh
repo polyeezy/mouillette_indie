@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Sat Jun  4 08:11:44 2016 Valérian Polizzi
-// Last update Sun Jun  5 08:51:09 2016 Valérian Polizzi
+// Last update Mon Jun  6 19:05:24 2016 Marc MORANT
 //
 
 #ifndef _AMENU_HH_
@@ -31,6 +31,8 @@ public:
   int           runScene();
   void          doUp();
   void          doDown();
+  void		doLeft();
+  void		doRight();
   void          doAction();
 
 
