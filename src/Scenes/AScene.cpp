@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Tue May 31 08:46:00 2016 Valérian Polizzi
-// Last update Mon Jun  6 12:46:39 2016 Valérian Polizzi
+// Last update Mon Jun  6 13:36:18 2016 Valérian Polizzi
 //
 
 #include <AScene.hh>
@@ -45,7 +45,9 @@ void AScene::addEntity(AEntity *entity)
  break;
     case AEntity::Type::MAP:
       entity->getGEntity()->setGraphic(_gentities->createMap(entity->getModel()));
+      entity->setPos(entity->getPos());
       entity->getGEntity()->getGraphic()->setMaterialFlag(irr::video::EMF_LIGHTING, false);
+      entity->getGEntity()->getGraphic()->setScale(irr::core::vector3df(entity->getSize()->getX(), entity->getSize()->getY(),entity->getSize()->getZ()));
       break;
     default:
       entity->getGEntity()->setGraphic(_gentities->createObject(entity->getModel()));

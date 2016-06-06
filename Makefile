@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ##
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Mon Jun  6 11:17:20 2016 Valérian Polizzi
+## Last update Mon Jun  6 22:20:19 2016 Marc MORANT
 ##
 
 CC		=		clang++
@@ -40,6 +40,8 @@ SRC		=		src/main.cpp				\
 				src/Entities/cars/FordGT.cpp		\
 				src/AEntities/AMap.cpp			\
 				src/Entities/maps/Map1.cpp			\
+				src/General/Game.cpp			\
+				src/General/Timer.cpp			\
 
 
 OBJ		=		$(SRC:.cpp=.o)
