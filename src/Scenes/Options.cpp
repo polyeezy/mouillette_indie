@@ -8,13 +8,19 @@
 ** Last update	Tue May 31 15:03:50 2016 Loïc Weinhard
 */
 
-#include "Scenes.hh"
+#include <Options.hh>
+#include <Button.hh>
 
-Options::Options()
+Options::Options(irr::scene::ISceneManager  *IS, irr::video::IVideoDriver* VD) : AMenu(IS, VD)
 {
-  this->addEntity(new Button(new Vec3(100, 100, 0), new Vec3(X_CENTER(100), Y_UP(100), 0), "SON"));
-  this->addEntity(new Button(new Vec3(100, 100, 0), new Vec3(X_CENTER(100), Y_CENTER(100), 0), "GRAPHISMES"));
-  this->addEntity(new Button(new Vec3(100, 100, 0), new Vec3(X_CENTER(100), Y_DOWN(100), 0), "RETOUR"));
+}
+
+void            Options::addElements()
+{
+  this->addEntity(new Button(new Vec3(10, 2, 2), new Vec3(0, 30, 0), "Son",  "materials/jouer.png"));
+  this->addEntity(new Button(new Vec3(10, 2, 2), new Vec3(0, 0, 0), "Video", "materials/jouer.png"));
+  this->addEntity(new Button(new Vec3(10, 2, 2), new Vec3(0, -30, 0), "MainMenu", "materials/jouer.png"));
+  this->getEntityManager()->getEntities()[this->getFocus()]->getGEntity()->getGraphic()->setScale(irr::core::vector3df(11, 3, 3));
 }
 
 Options::~Options()

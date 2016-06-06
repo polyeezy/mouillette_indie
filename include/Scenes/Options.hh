@@ -11,13 +11,15 @@
 #ifndef OPTIONS_HH_
 # define OPTIONS_HH
 
-# include "Scenes.hh"
+# include <AMenu.hh>
 
-class Options : public EntityManager
+class Options : virtual public AMenu
 {
 public:
-  Options();
+  Options(irr::scene::ISceneManager *, irr::video::IVideoDriver*);
   ~Options();
+
+  void addElements();
 };
 
 

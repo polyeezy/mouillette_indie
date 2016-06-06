@@ -5,7 +5,7 @@
 // Login   <pagin_g@epitech.net>
 // 
 // Started on  Tue May  3 14:27:13 2016 Gonzague PAGIN
-// Last update Tue May  3 17:06:36 2016 Gonzague PAGIN
+// Last update Sat Jun  4 16:15:49 2016 Gonzague PAGIN
 //
 
 #ifndef SOUNDMANAGER_HH_
@@ -23,11 +23,12 @@ public:
   ~SoundManager();
   
   void	addSound(const std::string &name, const std::string &path);
-  void	playSound(const std::string &name);
-
+  //  void	playSound(const std::string &name);
+  void	playSound(const std::string &name, float volume = 1);
+  
 private:
-  irrklang::ISoundEngine*		_engine;
-  std::map<std::string, std::string>	_sounds;
+  irrklang::ISoundEngine*				_engine;
+  std::map<std::string, irrklang::ISoundSource*>	_sounds;
 };
 
 #endif //SOUNDMANAGER_H_

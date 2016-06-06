@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:44:53 2016 Loïc Weinhard
-// Last update Sun Jun  5 05:35:35 2016 Valérian Polizzi
+// Last update Sun Jun  5 08:54:04 2016 Valérian Polizzi
 //
 
 #include "ControllerManager.hh"
@@ -89,7 +89,7 @@ bool ControllerManager::OnEvent(const irr::SEvent &event)
       {
 	if (event.EventType == irr::EET_KEY_INPUT_EVENT && !event.KeyInput.PressedDown)
 	  {
-	    	    std::cout << "KEY PRESSED : " << event.KeyInput.Key;
+	    std::cout << "KEY PRESSED : " << event.KeyInput.Key;
 	    std::cout << "[" << _key_map[event.KeyInput.Key] << "]";
 	    switch (_key_map[event.KeyInput.Key])
 	      {
@@ -114,8 +114,11 @@ bool ControllerManager::OnEvent(const irr::SEvent &event)
 		std::cout << "(PAUSE)" << std::endl;
 		break;
 	      case ControllerManager::Control::ACTION:
-		//_scene->clear();
-		//		_scene->loadScene("MainMenu2");
+		_scene->clear();
+		std::cout << "LOADING : " <<  _scene->getCurrentScene()->getAction() << std::endl;
+		_scene->getCurrentScene()->doAction();
+		
+		_scene->loadScene(_scene->getCurrentScene()->getAction());
 		break;
 	      default:
 		std::cout << "(unkown)" << std::endl;

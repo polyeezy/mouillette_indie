@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ##
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Sun Jun  5 03:29:15 2016 Valérian Polizzi
+## Last update Sun Jun  5 08:00:20 2016 Valérian Polizzi
 ##
 
 CC		=		clang++
@@ -23,16 +23,18 @@ SRC		=		src/main.cpp				\
 				src/Manager/ControllerManager.cpp	\
 				src/Manager/SceneManager.cpp		\
 				src/Manager/CameraManager.cpp		\
+				src/Manager/TextureManager.cpp		\
 				src/General/Vec3.cpp			\
 				src/AEntities/AEntity.cpp		\
 				src/AEntities/EntityManager.cpp		\
 				src/AEntities/Button.cpp		\
 				src/Scenes/MainMenu.cpp			\
-				src/Scenes/Options.cpp			\
 				src/AEntities/GraphicEntity.cpp		\
 				src/AEntities/GraphicEntityManager.cpp		\
-				src/Scenes/AScene.cpp			\
 				src/Scenes/AMenu.cpp			\
+				src/Scenes/AScene.cpp			\
+				src/Scenes/Options.cpp			\
+
 
 OBJ		=		$(SRC:.cpp=.o)
 

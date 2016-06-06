@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Tue May 31 08:44:17 2016 Valérian Polizzi
-// Last update Sun Jun  5 05:15:58 2016 Valérian Polizzi
+// Last update Sun Jun  5 08:04:57 2016 Valérian Polizzi
 //
 
 #ifndef _ASCENE_HH_
@@ -14,6 +14,7 @@
 #include <AEntity.hh>
 #include <EntityManager.hh>
 #include <GraphicEntityManager.hh>
+#include <TextureManager.hh>
 
 class AScene
 {
@@ -26,22 +27,28 @@ public:
 private:
   EntityManager		*_entities;
   GraphicEntityManager	*_gentities;
+  TextureManager	*_TM;
   AScene::Type		_type;
+  std::string		_action;
 public:
-  AScene(irr::scene::ISceneManager* , const AScene::Type&);
+  AScene(irr::scene::ISceneManager* , irr::video::IVideoDriver*,  const AScene::Type&);
   ~AScene();
   
   void	addEntity(AEntity *);
   GraphicEntityManager *getGraphicEntityManager();
   EntityManager		*getEntityManager();
 
-  virtual void			addElements() = 0;
+    virtual void			addElements() = 0;
   AScene::Type		getType() const;
-  virtual int		runScene() = 0;
+  // virtual int		runScene() = 0;
   int			getNbItems() const;
   virtual void	        doUp() = 0;
   virtual void		doDown() = 0;
   virtual void		doAction() = 0;
+
+  void			setAction(const std::string &);
+const std::string		&getAction();
+
 };
   
 #endif
