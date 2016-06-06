@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Sat Jun  4 08:13:57 2016 Valérian Polizzi
-// Last update Mon Jun  6 19:05:44 2016 Marc MORANT
+// Last update Mon Jun  6 22:12:34 2016 Marc MORANT
 //
 
 #include <AMenu.hh>
@@ -78,3 +78,6 @@ void            AMenu::doAction()
   _current_focus = 0;
   //  this->setAction("MainMenu2");
 }
+
+void		AMenu::Refresh()
+{}

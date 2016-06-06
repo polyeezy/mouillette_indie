@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Tue May 31 08:44:17 2016 Valérian Polizzi
-// Last update Mon Jun  6 19:04:53 2016 Marc MORANT
+// Last update Mon Jun  6 22:11:53 2016 Marc MORANT
 //
 
 #ifndef _ASCENE_HH_
@@ -47,6 +47,7 @@ public:
   virtual void	        doLeft() = 0;
   virtual void		doRight() = 0;
   virtual void		doAction() = 0;
+  virtual void		Refresh() = 0;
 
   void			setAction(const std::string &);
 const std::string		&getAction();

@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon Jun  6 05:26:20 2016 Valérian Polizzi
-// Last update Mon Jun  6 18:37:41 2016 Marc MORANT
+// Last update Mon Jun  6 22:06:21 2016 Marc MORANT
 //
 
 #ifndef _PLAY_HH_
@@ -25,6 +25,7 @@ public:
   void doDown();
   void doLeft();
   void doRight();
+  void Refresh();
 };
 
 #endif

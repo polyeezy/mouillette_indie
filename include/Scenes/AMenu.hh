@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Sat Jun  4 08:11:44 2016 Valérian Polizzi
-// Last update Mon Jun  6 19:05:24 2016 Marc MORANT
+// Last update Mon Jun  6 22:12:06 2016 Marc MORANT
 //
 
 #ifndef _AMENU_HH_
@@ -34,6 +34,7 @@ public:
   void		doLeft();
   void		doRight();
   void          doAction();
+  void		Refresh();
 
 
 };
