@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Tue May 31 08:46:00 2016 Valérian Polizzi
-// Last update Mon Jun  6 11:29:06 2016 Valérian Polizzi
+// Last update Mon Jun  6 12:46:39 2016 Valérian Polizzi
 //
 
 #include <AScene.hh>
@@ -37,7 +37,9 @@ void AScene::addEntity(AEntity *entity)
       entity->getGEntity()->setGraphic(_gentities->createCube());
       entity->setPos(entity->getPos());
       //entity->getGEntity()->getGraphic()->setPosition(irr::core::vector3df(entity->getPos()->getX(), entity->getPos()->getY(),entity->getPos()->getZ()));
-      entity->getGEntity()->getGraphic()->setScale(irr::core::vector3df(entity->getSize()->getX(), entity->getSize()->getY(),entity->getSize()->getZ()));      
+      entity->setSize(entity->getSize());
+      entity->setRot(new Vec3(90, 0, 0));
+      
       entity->getGEntity()->getGraphic()->setMaterialTexture(0, _TM->getTexture(entity->getModel()));
       entity->getGEntity()->getGraphic()->setMaterialFlag(irr::video::EMF_LIGHTING, false);
  break;
