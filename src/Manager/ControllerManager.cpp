@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:44:53 2016 Loïc Weinhard
-// Last update Mon Jun  6 21:55:04 2016 Marc MORANT
+// Last update Mon Jun  6 23:30:57 2016 Marc MORANT
 //
 
 #include "ControllerManager.hh"
@@ -123,11 +123,14 @@ bool ControllerManager::OnEvent(const irr::SEvent &event)
       		std::cout << "(PAUSE)" << std::endl;
       		break;
       	      case ControllerManager::Control::ACTION:
-      		_scene->clear();
-      		std::cout << "LOADING : " <<  _scene->getCurrentScene()->getAction() << std::endl;
-      		_scene->getCurrentScene()->doAction();
-		
-      		_scene->loadScene(_scene->getCurrentScene()->getAction());
+		if (_scene->getCurrentScene()->getType() == AScene::MENU)
+		  {
+		    _scene->clear();
+		    std::cout << "LOADING : " <<  _scene->getCurrentScene()->getAction() << std::endl;
+		    _scene->getCurrentScene()->doAction();
+		    
+		    _scene->loadScene(_scene->getCurrentScene()->getAction());
+		  }
       		break;
       	      default:
       		std::cout << "(unkown)" << std::endl;
@@ -171,10 +174,6 @@ void		ControllerManager::interpretKeys(void)
 	      std::cout << "(PAUSE)" << std::endl;
 	      break;
 	    case ControllerManager::Control::ACTION:
-	      _scene->clear();
-	      std::cout << "LOADING : " <<  _scene->getCurrentScene()->getAction() << std::endl;
-	      _scene->getCurrentScene()->doAction();		
-	      _scene->loadScene(_scene->getCurrentScene()->getAction());
 	      break;
 	    default:
 	      std::cout << "(unkown)" << std::endl;

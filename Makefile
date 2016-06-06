@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ##
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Mon Jun  6 22:20:19 2016 Marc MORANT
+## Last update Mon Jun  6 23:31:35 2016 Marc MORANT
 ##
 
 CC		=		clang++
@@ -57,7 +57,7 @@ LDFLAGS		+=		-lGL -lXxf86vm -lXext -lX11 -lXcursor
 USERCXXFLAGS 	= 		-O3 -ffast-math
 CXXFLAGS 	= 		$(USERCXXFLAGS)
 
-CXXFLAGS	+=		-Wall -Wextra -Werror -Wno-unused-variable -Wno-unused-parameter $(INCLUDES) -std=c++11 -g3
+CXXFLAGS	+=		-Wall -Wextra -Werror -Wno-unused-variable -Wno-unused-parameter $(INCLUDES) -std=c++11
 
 MR_CLEAN        =               find ./ \( -name "*~" -o -name "\#*\#" \) -delete
 
