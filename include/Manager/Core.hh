@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Tue May 17 02:22:46 2016 Valérian Polizzi
-// Last update Mon Jun  6 22:20:45 2016 Marc MORANT
+// Last update Mon Jun  6 23:20:05 2016 Marc MORANT
 //
 
 #ifndef _CORE_HH_
@@ -25,6 +25,7 @@ public:
   ~Core();
 
   void	mainLoop(void);
+  bool	handleGame(void);
 };
 
 #endif
