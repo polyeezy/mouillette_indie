@@ -5,10 +5,10 @@
 // Login   <pagin_g@epitech.net>
 // 
 // Started on  Mon Jun  6 10:38:17 2016 Gonzague PAGIN
-// Last update Mon Jun  6 14:04:55 2016 Gonzague PAGIN
+// Last update Mon Jun  6 22:19:46 2016 Marc MORANT
 //
 
-#include "timer.hpp"
+#include "Timer.hpp"
 
 Timer::Timer()
 {
