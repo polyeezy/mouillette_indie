@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:38:00 2016 Loïc Weinhard
-// Last update Sat Jun  4 10:52:39 2016 Valérian Polizzi
+// Last update Mon Jun  6 21:40:06 2016 Marc MORANT
 //
 
 #ifndef CONTROLLERMANAGER_HH_
@@ -48,6 +48,7 @@ public:
   bool	OnEvent(const irr::SEvent &event);
   bool  isKeyDown(const e_control enumKey) const;
   int	linkScene(SceneManager *);
+  void	interpretKeys(void);
 };
 
 #endif

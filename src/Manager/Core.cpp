@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Tue May 17 02:24:15 2016 Valérian Polizzi
-// Last update Tue May 31 05:30:53 2016 Valérian Polizzi
+// Last update Mon Jun  6 21:55:41 2016 Marc MORANT
 //
 
 #include <Core.hh>
@@ -19,4 +19,15 @@ Core::Core()
 
 Core::~Core()
 {
+}
+
+void	Core::mainLoop(void)
+{
+  while (this->_gm->isRunning())
+    {
+      if (this->_gm->getSceneManager()->getCurrentScene()->getType() != AScene::MENU)
+	this->_gm->getControllerManager()->interpretKeys();
+      this->_gm->render();
+      this->_gm->refresh();
+    }
 }

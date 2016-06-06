@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:44:53 2016 Loïc Weinhard
-// Last update Mon Jun  6 18:39:54 2016 Marc MORANT
+// Last update Mon Jun  6 21:55:04 2016 Marc MORANT
 //
 
 #include "ControllerManager.hh"
@@ -98,46 +98,128 @@ bool ControllerManager::OnEvent(const irr::SEvent &event)
 	  this->_keysDown[realKey] = event.KeyInput.PressedDown;
       }
       {
-	if (event.EventType == irr::EET_KEY_INPUT_EVENT && event.KeyInput.PressedDown)
-	  {
-	    switch (_key_map[event.KeyInput.Key])
-	      {
-	      case ControllerManager::Control::UP:
-		_scene->getCurrentScene()->doUp();
-		break;
-	      case ControllerManager::Control::DOWN:
-		_scene->getCurrentScene()->doDown();
-		break;
-	      case ControllerManager::Control::LEFT:
-		std::cout << "(LEFT)" << std::endl;
-		_scene->getCurrentScene()->doLeft();
-		break;
-	      case ControllerManager::Control::RIGHT:
-		_scene->getCurrentScene()->doRight();
-		std::cout << "(RIGHT)" << std::endl;
-		break;
-	      case ControllerManager::Control::ESCAPE:
-		std::cout << "(ESCAPE)" << std::endl;
-		break;
-	      case ControllerManager::Control::PAUSE:
-		std::cout << "(PAUSE)" << std::endl;
-		break;
-	      case ControllerManager::Control::ACTION:
-		_scene->clear();
-		std::cout << "LOADING : " <<  _scene->getCurrentScene()->getAction() << std::endl;
-		_scene->getCurrentScene()->doAction();
+      	if (event.EventType == irr::EET_KEY_INPUT_EVENT && event.KeyInput.PressedDown)
+      	  {
+      	    switch (_key_map[event.KeyInput.Key])
+      	      {
+      	      case ControllerManager::Control::UP:
+      		_scene->getCurrentScene()->doUp();
+      		break;
+      	      case ControllerManager::Control::DOWN:
+      		_scene->getCurrentScene()->doDown();
+      		break;
+      	      case ControllerManager::Control::LEFT:
+      		std::cout << "(LEFT)" << std::endl;
+      		_scene->getCurrentScene()->doLeft();
+      		break;
+      	      case ControllerManager::Control::RIGHT:
+      		_scene->getCurrentScene()->doRight();
+      		std::cout << "(RIGHT)" << std::endl;
+      		break;
+      	      case ControllerManager::Control::ESCAPE:
+      		std::cout << "(ESCAPE)" << std::endl;
+      		break;
+      	      case ControllerManager::Control::PAUSE:
+      		std::cout << "(PAUSE)" << std::endl;
+      		break;
+      	      case ControllerManager::Control::ACTION:
+      		_scene->clear();
+      		std::cout << "LOADING : " <<  _scene->getCurrentScene()->getAction() << std::endl;
+      		_scene->getCurrentScene()->doAction();
 		
-		_scene->loadScene(_scene->getCurrentScene()->getAction());
-		break;
-	      default:
-		std::cout << "(unkown)" << std::endl;
-		break;
-	      }
-	  }
-	return true;
+      		_scene->loadScene(_scene->getCurrentScene()->getAction());
+      		break;
+      	      default:
+      		std::cout << "(unkown)" << std::endl;
+      		break;
+      	      }
+      	  }
+      	return true;
       }
     }
   return false;
+}
+
+void		ControllerManager::interpretKeys(void)
+{
+  for (int x = 0; x < CM_CONTROL_COUNT; x++)
+    {
+      if (this->_keysDown[x])
+	{
+	  switch (x)
+	    {
+	    case ControllerManager::Control::UP:
+	      std::cout << "(UP)" << std::endl;
+	      _scene->getCurrentScene()->doUp();
+	      break;
+	    case ControllerManager::Control::DOWN:
+	      std::cout << "(DOWN)" << std::endl;
+	      _scene->getCurrentScene()->doDown();
+	      break;
+	    case ControllerManager::Control::LEFT:
+	      std::cout << "(LEFT)" << std::endl;
+	      _scene->getCurrentScene()->doLeft();
+	      break;
+	    case ControllerManager::Control::RIGHT:
+	      _scene->getCurrentScene()->doRight();
+	      std::cout << "(RIGHT)" << std::endl;
+	      break;
+	    case ControllerManager::Control::ESCAPE:
+	      std::cout << "(ESCAPE)" << std::endl;
+	      break;
+	    case ControllerManager::Control::PAUSE:
+	      std::cout << "(PAUSE)" << std::endl;
+	      break;
+	    case ControllerManager::Control::ACTION:
+	      _scene->clear();
+	      std::cout << "LOADING : " <<  _scene->getCurrentScene()->getAction() << std::endl;
+	      _scene->getCurrentScene()->doAction();		
+	      _scene->loadScene(_scene->getCurrentScene()->getAction());
+	      break;
+	    default:
+	      std::cout << "(unkown)" << std::endl;
+	      break;	      
+	    }
+	}
+    }
+    //   if (event.EventType == irr::EET_KEY_INPUT_EVENT && event.KeyInput.PressedDown)
+    // 	{
+    // 	  switch (_key_map[event.KeyInput.Key])
+    // 	    {
+    // 	    case ControllerManager::Control::UP:
+    // 	      _scene->getCurrentScene()->doUp();
+    // 	      break;
+    // 	    case ControllerManager::Control::DOWN:
+    // 	      _scene->getCurrentScene()->doDown();
+    // 	      break;
+    // 	    case ControllerManager::Control::LEFT:
+    // 	      std::cout << "(LEFT)" << std::endl;
+    // 	      _scene->getCurrentScene()->doLeft();
+    // 	      break;
+    // 	    case ControllerManager::Control::RIGHT:
+    // 	      _scene->getCurrentScene()->doRight();
+    // 	      std::cout << "(RIGHT)" << std::endl;
+    // 	      break;
+    // 	    case ControllerManager::Control::ESCAPE:
+    // 	      std::cout << "(ESCAPE)" << std::endl;
+    // 	      break;
+    // 	    case ControllerManager::Control::PAUSE:
+    // 	      std::cout << "(PAUSE)" << std::endl;
+    // 	      break;
+    // 	    case ControllerManager::Control::ACTION:
+    // 	      _scene->clear();
+    // 	      std::cout << "LOADING : " <<  _scene->getCurrentScene()->getAction() << std::endl;
+    // 	      _scene->getCurrentScene()->doAction();		
+    // 	      _scene->loadScene(_scene->getCurrentScene()->getAction());
+    // 	      break;
+    // 	    default:
+    // 	      std::cout << "(unkown)" << std::endl;
+    // 	      break;
+
+    // 	    }
+    // 	}
+    //   return true;
+    // }
 }
 
 int		ControllerManager::linkScene(SceneManager *scene)

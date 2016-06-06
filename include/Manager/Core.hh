@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Tue May 17 02:22:46 2016 Valérian Polizzi
-// Last update Mon May 30 03:09:57 2016 Valérian Polizzi
+// Last update Mon Jun  6 21:42:57 2016 Marc MORANT
 //
 
 #ifndef _CORE_HH_
@@ -22,6 +22,8 @@ class Core
 public:
   Core();
   ~Core();
+
+  void	mainLoop(void);
 };
 
 #endif

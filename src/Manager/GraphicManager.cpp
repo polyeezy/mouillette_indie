@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Mon Jun  6 11:32:52 2016 Valérian Polizzi
+// Last update Mon Jun  6 21:42:37 2016 Marc MORANT
 //
 
 #include <MainMenu.hh>
@@ -70,11 +70,11 @@ int	GraphicManager::openWindow()
     this->getSoundManager()->addSound("test", "./assets/Menu.wav");
     this->getSoundManager()->playSound("test");
     
-    while (this->isRunning())
-    {
-      this->render();
-      this->refresh();
-    }
+    // while (this->isRunning())
+    // {
+    //   this->render();
+    //   this->refresh();
+    // }
   return (0);
 }
 
