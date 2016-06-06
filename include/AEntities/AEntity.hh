@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:08 2016 Loïc Weinhard
-// Last update Sat Jun  4 10:30:08 2016 Valérian Polizzi
+// Last update Mon Jun  6 07:27:09 2016 Valérian Polizzi
 //
 
 #ifndef AENTITY_HH_
@@ -24,6 +24,7 @@ enum Type
 private:
   Vec3*			_size;
   Vec3*			_pos;
+  Vec3*			_rot;
   AEntity::Type		_type;
   std::string		_model;
   GraphicEntity		*_gentity;  
@@ -34,14 +35,18 @@ public:
 
   Vec3*			getSize() const;
   Vec3*			getPos() const;
+  Vec3*			getRot() const;
   AEntity::Type		getType() const;  
   std::string		getModel() const;
   std::string		getValue() const;
 
   void		setSize(const float width, const float height, const float depth);
   void		setSize(const Vec3*);
+
   void		setPos(const float x, const float y, const float z);
+
   void		setPos(const Vec3*);
+  void		setRot(const Vec3*);
   void		setType(const AEntity::Type);
   void		setModel(const std::string &);
   void		setValue(const std::string &);

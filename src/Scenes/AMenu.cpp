@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Sat Jun  4 08:13:57 2016 Valérian Polizzi
-// Last update Sun Jun  5 08:52:42 2016 Valérian Polizzi
+// Last update Mon Jun  6 05:36:30 2016 Valérian Polizzi
 //
 
 #include <AMenu.hh>
@@ -68,6 +68,7 @@ void            AMenu::doDown()
 
 void            AMenu::doAction()
 {
+   this->setAction(this->getEntityManager()->getEntities()[_current_focus]->getValue());
   _current_focus = 0;
   //  this->setAction("MainMenu2");
 }

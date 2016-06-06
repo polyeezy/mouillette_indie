@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ##
 ## Started on  Mon Apr 25 11:03:41 2016 Valerian Polizzi
-## Last update Sun Jun  5 08:00:20 2016 Valérian Polizzi
+## Last update Mon Jun  6 06:13:28 2016 Valérian Polizzi
 ##
 
 CC		=		clang++
@@ -34,12 +34,16 @@ SRC		=		src/main.cpp				\
 				src/Scenes/AMenu.cpp			\
 				src/Scenes/AScene.cpp			\
 				src/Scenes/Options.cpp			\
+				src/Scenes/AGameplay.cpp		\
+				src/AEntities/ACar.cpp			\
+				src/Scenes/Play.cpp			\
+				src/Entities/cars/FordGT.cpp		\
 
 
 OBJ		=		$(SRC:.cpp=.o)
 
 INCLUDES	=		-I./include -I./include/Manager -I./include/AEntities/ -I./include/General/
-INCLUDES	+=		-I./lib/IrrLicht/include/ -I./include/Scenes/ -I./include/Entities
+INCLUDES	+=		-I./lib/IrrLicht/include/ -I./include/Scenes/ -I./include/Entities -I./include/Entities/cars
 
 
 LDFLAGS		+=		-L$(IrrlichtHome)/lib/Linux -L/usr/X11R6/lib64 -L/usr/lib  -lIrrlicht -lpthread -lIrrKlang

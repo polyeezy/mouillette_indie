@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Mon Jun  6 03:37:42 2016 Valérian Polizzi
+// Last update Mon Jun  6 05:35:11 2016 Valérian Polizzi
 //
 
 #include <MainMenu.hh>
@@ -34,10 +34,12 @@ int	GraphicManager::init(const size_t &w, const size_t &h)
 
   _device->setWindowCaption(L"HyperSprint");
   _SM->preloadScene(new MainMenu(_device->getSceneManager(), _driver), "MainMenu");
-  _SM->preloadScene(new Options(_device->getSceneManager(), _driver), "Options");
+  _SM->preloadScene(new Play(_device->getSceneManager(), _driver), "Jouer");
+  // _SM->preloadScene(new Options(_device->getSceneManager(), _driver), "Options");
 
-  _SM->loadScene("MainMenu");
-  _CAMM->setCamera(_SM->getCurrentScene()->getGraphicEntityManager()->getScene()->addCameraSceneNode(0, irr::core::vector3df(0, 0, -100), irr::core::vector3df(0, 0, 0)));
+ _SM->loadScene("MainMenu");
+ // _SM->loadScene("Play");
+ _CAMM->setCamera(_SM->getCurrentScene()->getGraphicEntityManager()->getScene()->addCameraSceneNode(0, irr::core::vector3df(0, 0, -100), irr::core::vector3df(0, 0, 0)));
   _CM->linkScene(_SM);
  
 

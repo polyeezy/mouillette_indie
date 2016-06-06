@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Wed May 11 14:44:53 2016 Loïc Weinhard
-// Last update Sun Jun  5 08:54:04 2016 Valérian Polizzi
+// Last update Mon Jun  6 08:20:03 2016 Valérian Polizzi
 //
 
 #include "ControllerManager.hh"
@@ -87,15 +87,11 @@ bool ControllerManager::OnEvent(const irr::SEvent &event)
   if (event.EventType == irr::EET_KEY_INPUT_EVENT)
     {
       {
-	if (event.EventType == irr::EET_KEY_INPUT_EVENT && !event.KeyInput.PressedDown)
+	if (event.EventType == irr::EET_KEY_INPUT_EVENT && event.KeyInput.PressedDown)
 	  {
-	    std::cout << "KEY PRESSED : " << event.KeyInput.Key;
-	    std::cout << "[" << _key_map[event.KeyInput.Key] << "]";
 	    switch (_key_map[event.KeyInput.Key])
 	      {
 	      case ControllerManager::Control::UP:
-		
-		//	std::cout << "(UP)" << std::endl;
 		_scene->getCurrentScene()->doUp();
 		break;
 	      case ControllerManager::Control::DOWN:

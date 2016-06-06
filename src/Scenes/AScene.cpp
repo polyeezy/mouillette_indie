@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Tue May 31 08:46:00 2016 Valérian Polizzi
-// Last update Sun Jun  5 07:21:48 2016 Valérian Polizzi
+// Last update Mon Jun  6 08:06:02 2016 Valérian Polizzi
 //
 
 #include <AScene.hh>
@@ -35,7 +35,8 @@ void AScene::addEntity(AEntity *entity)
     {
     case AEntity::Type::MENUITEM:
       entity->getGEntity()->setGraphic(_gentities->createCube());
-      entity->getGEntity()->getGraphic()->setPosition(irr::core::vector3df(entity->getPos()->getX(), entity->getPos()->getY(),entity->getPos()->getZ()));
+      entity->setPos(entity->getPos());
+      //entity->getGEntity()->getGraphic()->setPosition(irr::core::vector3df(entity->getPos()->getX(), entity->getPos()->getY(),entity->getPos()->getZ()));
       entity->getGEntity()->getGraphic()->setScale(irr::core::vector3df(entity->getSize()->getX(), entity->getSize()->getY(),entity->getSize()->getZ()));      
       entity->getGEntity()->getGraphic()->setMaterialTexture(0, _TM->getTexture(entity->getModel()));
       entity->getGEntity()->getGraphic()->setMaterialFlag(irr::video::EMF_LIGHTING, false);

@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon May 30 02:50:44 2016 Valérian Polizzi
-// Last update Sat Jun  4 10:58:31 2016 Valérian Polizzi
+// Last update Mon Jun  6 05:33:57 2016 Valérian Polizzi
 //
 
 #ifndef _SCENES_HH_
@@ -18,4 +18,6 @@
 # include "Options.hh"
 # include "MainMenu.hh"
 # include "MainMenu2.hh"
+# include <Play.hh>
+
 #endif

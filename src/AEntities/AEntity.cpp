@@ -5,19 +5,20 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:46 2016 Loïc Weinhard
-// Last update Sat Jun  4 10:29:44 2016 Valérian Polizzi
+// Last update Mon Jun  6 08:10:12 2016 Valérian Polizzi
 //
 
 #include "AEntity.hh"
 
 AEntity::AEntity(Vec3* size, Vec3* pos, const AEntity::Type type, const std::string &model, const std::string &value)
 {
+  _gentity = new GraphicEntity;
   _size = size;
   _pos = pos;
   _type = type;
   _model = model;
   _value = value;
-  _gentity = new GraphicEntity;
+  _rot = new Vec3(0, 0, 0);
 }
 
 AEntity::~AEntity()
@@ -25,6 +26,11 @@ AEntity::~AEntity()
 
 }
 
+
+Vec3*	AEntity::getRot() const
+{
+  return (_rot);
+}
 
 Vec3*	AEntity::getSize() const
 {
@@ -63,28 +69,28 @@ void	AEntity::setSize(const float width, const float height, const float depth)
 }
 
 
+void	AEntity::setRot(const Vec3* size)
+{
+  _rot->setX(size->getX());
+  _rot->setY(size->getY());
+  _rot->setZ(size->getZ());
+  this->getGEntity()->getGraphic()->setRotation(irr::core::vector3df(size->getX(), size->getY(), size->getZ()));
+}
+
 void	AEntity::setSize(const Vec3* size)
 {
   _size->setX(size->getX());
   _size->setY(size->getY());
   _size->setZ(size->getZ());
-  this->getGEntity()->getGraphic()->setScale(irr::core::vector3df(0, 0, 0));
+  this->getGEntity()->getGraphic()->setScale(irr::core::vector3df(size->getX(), size->getY(), size->getZ()));
 }
-
-
-void	AEntity::setPos(const float x, const float y, const float z)
-{
-  _pos->setX(x);
-  _pos->setY(y);
-  _pos->setZ(z);
-}
-
 
 void	AEntity::setPos(const Vec3* pos)
 {
   _pos->setX(pos->getX());
   _pos->setY(pos->getY());
   _pos->setZ(pos->getZ());
+  this->getGEntity()->getGraphic()->setPosition(irr::core::vector3df(pos->getX(), pos->getY(), pos->getZ()));
 }
 
 
