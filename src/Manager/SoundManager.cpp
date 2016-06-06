@@ -5,7 +5,7 @@
 // Login   <pagin_g@epitech.net>
 // 
 // Started on  Tue May  3 14:27:26 2016 Gonzague PAGIN
-// Last update Sat Jun  4 16:16:23 2016 Gonzague PAGIN
+// Last update Sun Jun  5 14:48:59 2016 Gonzague PAGIN
 //
 
 #include "SoundManager.hh"
@@ -23,10 +23,10 @@ SoundManager::~SoundManager()
   this->_engine->drop();
 }
 
-void	SoundManager::playSound(const std::string &name, float volume)
+void	SoundManager::playSound(const std::string &name, float volume, bool loop)
 {
   _sounds[name]->setDefaultVolume(volume);
-  this->_engine->play2D(_sounds[name]);
+  this->_engine->play2D(_sounds[name], loop);
 }
 
 void	SoundManager::addSound(const std::string &name, const std::string &path)
