@@ -5,10 +5,11 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon Jun  6 05:13:12 2016 Valérian Polizzi
-// Last update Mon Jun  6 19:27:48 2016 Marc MORANT
+// Last update Mon Jun  6 11:24:04 2016 Valérian Polizzi
 //
 
 #include <Play.hh>
+#include <Map1.hh>
 
 Play::Play(irr::scene::ISceneManager *SM, irr::video::IVideoDriver *VD) : AGameplay(SM, VD)
 {
@@ -18,6 +19,7 @@ Play::Play(irr::scene::ISceneManager *SM, irr::video::IVideoDriver *VD) : AGamep
 void Play::addElements()
 {
   this->addEntity(new FordGT(new Vec3(2, 2, 2), new Vec3(0, 30, 0)));
+  this->addEntity(new Map1(new Vec3(1.5, 1.5, 1.5), new Vec3(-50, -10, 0)));
   this->setPlayer(this->getEntityManager()->getEntities()[0]);
   //  this->getPlayer()->setRot(new Vec3(0, 90, 0));
 }

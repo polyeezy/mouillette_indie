@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Fri Apr 29 06:16:21 2016 Valérian Polizzi
-// Last update Mon Jun  6 05:35:11 2016 Valérian Polizzi
+// Last update Mon Jun  6 11:32:52 2016 Valérian Polizzi
 //
 
 #include <MainMenu.hh>
@@ -39,7 +39,7 @@ int	GraphicManager::init(const size_t &w, const size_t &h)
 
  _SM->loadScene("MainMenu");
  // _SM->loadScene("Play");
- _CAMM->setCamera(_SM->getCurrentScene()->getGraphicEntityManager()->getScene()->addCameraSceneNode(0, irr::core::vector3df(0, 0, -100), irr::core::vector3df(0, 0, 0)));
+ _CAMM->setCamera(_SM->getCurrentScene()->getGraphicEntityManager()->getScene()->addCameraSceneNode(0, irr::core::vector3df(0, 300, 0), irr::core::vector3df(0, -100, 50)));
   _CM->linkScene(_SM);
  
 

@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Fri Apr 29 15:55:08 2016 Loïc Weinhard
-// Last update Mon Jun  6 07:27:09 2016 Valérian Polizzi
+// Last update Mon Jun  6 10:38:42 2016 Valérian Polizzi
 //
 
 #ifndef AENTITY_HH_
@@ -19,7 +19,7 @@ class	AEntity
 public:
 enum Type
   {
-    WALL, MENUITEM, CAR, FLOOR, POWERUP, UNDEFINED
+    WALL, MENUITEM, CAR, FLOOR, POWERUP, UNDEFINED, MAP
   };  
 private:
   Vec3*			_size;

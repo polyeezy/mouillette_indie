@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 // 
 // Started on  Mon May 30 05:56:40 2016 Valérian Polizzi
-// Last update Sun Jun  5 03:27:15 2016 Valérian Polizzi
+// Last update Mon Jun  6 10:56:13 2016 Valérian Polizzi
 //
 
 #ifndef _GRAPHICENTITYMANAGER_HH_
@@ -29,8 +29,10 @@ public:
 
   void	setScene(irr::scene::ISceneManager *);
 
-  irr::scene::ISceneNode	*createCube();
+  irr::scene::IMeshSceneNode		*createMap(const std::string &path);
+  irr::scene::ISceneNode		*createCube();
   irr::scene::IMeshSceneNode		*createObject(const std::string &);
+  
   
 };
 
